@@ -90,6 +90,8 @@ class BankAccount:
         # function_name(f"{cls.class_attribute} text in a string.")
         print(f"{cls.population} users in the program.")
 
+# ///////////////WHAT DO WE CALL THE CODE SECTION ABOVE?
+
 class User:
     # CD ! Class Attribute
     population_nero = 0
@@ -111,15 +113,15 @@ class User:
     #  [keyword] [term -method or function_name or both] (self): dtf colon
     def greeting(self):
         # (f"string text{self.variable -is this an instance?}string")
-        print(f"Hello my name is {self.first_name}!")
+        print(f"Hello my name is {self.first_name} {self.last_name}!")
 
 #  [keyword] [term -method or function_name or both] (self): dtf colon
     def gimme_the_411(self):
         # (f"string text{self.variable -is this an instance?}string")
-        print(f"Hello my name is {self.first_name}! "
+        print(f"Hello my first name is {self.first_name}! "
               f"My last name is {self.last_name}! " 
               f"I am {self.age} years old! " 
-               # (f"string text{self.[term-variable]. -is this an instance?}string")
+               # (f"string text{self.[term-variable].[term-argument1], self.[term-variable].[term-argument2]}string")
               f"My account info is {self.account.int_rate, self.account.balance,}!")
 
     # TERM?  BLOCK BELOW IS FOR DIAGNOSTICS
@@ -133,81 +135,133 @@ class User:
         # CD your code here! (remember, instance attributes go here)
         # CD don't worry about user info here; we'll involve the User class soon
     
-# ///////////////WHAT DO WE CALL THE CODE SECTION ABOVE?
+
+
 
 # /////////////////WHAT DO WE CALL THE CODE SECTION BELOW?
             # BACK UP COPY OF LOWER PART COMMENTED OUT UNDERNEATH
 
+# IS THE BELOW CODE NO LONGER NECESSARY?  I LEFT IT IN ANYWAY
 # [term -variable?] =ClassName(argument1?, arugment2?)
 medici =BankAccount(0.03, 0)
 j_morgan =BankAccount(0.05, 1000)
 kovach =BankAccount(0.03, 0)
-buffet =BankAccount(0.03, 0)
-# # [term -variable?].function_name(argument2? -what is the parentheis?)
-# j_morgan.deposit(100).deposit(100).deposit(100).withdrawal(50).yield_intrest().display_account_info() 
 
-# FIRST ACCOUNT
-
-stephen =User ("Stephen", "Kovach", 41)
+# [term -variable?] = ClassName ("second_argument","third_argument","fourth_argument")
+kovach =User ("Stephen", "Kovach", 41)
 medici =User ("Lorenzo", "de' Medici", 530)
 buffet =User ("Warren", "Buffet", 92)
 
-medici.gimme_the_411()
-stephen.account.deposit(300)
-stephen.account.set_interest(3.05)
-stephen.account.display_account_info
-medici.account.display_account_info
-stephen.gimme_the_411()
-buffet.account.display_account_info()
+# FIRST ACCOUNT
 
+# what works:  
 
-# medici.display_account_info()
-# medici.display_interest_rate()
+# medici.gimme_the_411()
 
-# # what works
+medici.account.deposit(100)
+medici.account.deposit(100)
+medici.account.deposit(100)
+medici.account.withdrawal(50)
+medici.account.yield_interest()
+medici.account.display_account_info()
 
-# medici.deposit(100)
-# medici.deposit(100)
-# medici.deposit(100)
-# medici.withdrawal(50)
-# medici.yield_interest()
-# medici.display_account_info()
+# # below are two attempts at chaining--Why are they not working?
 
-# # below is an attempt at chaining--Why is this not working?
+#----------------------first attempt at chaining
 
-# medici.deposit(100).deposit(100).deposit(100).withdrawal(50).yield_interest().display_account_info()
+# medici.account.deposit(100).account.deposit(100).account.deposit(100).account.withdrawal(50).account.yield_interest().account.display_account_info()
+
+#----------------------second attempt at chaining
+
+# medici.account.deposit(100).deposit(100).deposit(100).withdrawal(50).yield_interest().display_account_info()
 
 # SECOND ACCOUNT
+
+# what works
+
+# kovach.gimme_the_411()
+
+kovach.account.deposit(1000)
+kovach.account.deposit(1000)
+kovach.account.withdrawal(1)
+kovach.account.withdrawal(1)
+kovach.account.withdrawal(1)
+kovach.account.withdrawal(1)
+kovach.account.yield_interest()
+kovach.account.display_account_info()
+
+# # below are two attempts at chaining--Why are they not working?
+
+#----------------------first attempt at chaining
+
+# kovach.account.deposit(1000).account.deposit(1000).account.withdrawal(1).account.withdrawal(1).account.withdrawal(1).account.withdrawal(1).account.yield_interest().account.display_account_info()
+
+#----------------------second attempt at chaining
+
+# kovach.account.deposit(1000).deposit(1000).withdrawal(1).withdrawal(1).withdrawal(1).withdrawal(1).yield_interest().display_account_info()
+
+# //////////////////
+# SENSI BONUS--HOW WOULD I DO IT?
+# //////////////////
+
+# COUNTER EXAMPLE j_morgan 
+
+# works:
 
 # j_morgan.display_account_info()
 # j_morgan.display_interest_rate()
 
+# doesn't work
+# j_morgan.gimme_the_411()
+
 # what works
 
-j_morgan.deposit(100)
-j_morgan.deposit(100)
-j_morgan.withdrawal(1)
-j_morgan.withdrawal(1)
-j_morgan.withdrawal(1)
-j_morgan.withdrawal(1)
-j_morgan.yield_interest()
-j_morgan.display_account_info()
+# j_morgan.deposit(100)
+# j_morgan.deposit(100)
+# j_morgan.withdrawal(1)
+# j_morgan.withdrawal(1)
+# j_morgan.withdrawal(1)
+# j_morgan.withdrawal(1)
+# j_morgan.yield_interest()
+# j_morgan.display_account_info()
 
 # below is an attempt at chaining--Why is this not working?
 
 # j_morgan.deposit(100).deposit(100).withdrawal(1).withdrawal(1).withdrawal(1).withdrawal(1).yield_interest().display_account_info()
 
-# NINJA BONUS:  What is it asking me to do?  How would I do it?  
 
 
-# CODE BELOW IS FOR DIAGNOSTICS.  COUNTING TITUS & NERO.  NOT EXPECTED
+# # COUNTER EXAMPLE buffet
+
+# buffet.gimme_the_411()
+
+# buffet.account.deposit(1000)
+# buffet.account.deposit(1000)
+# buffet.account.withdrawal(1)
+# buffet.account.withdrawal(1)
+# buffet.account.withdrawal(1)
+# buffet.account.withdrawal(1)
+# buffet.account.yield_interest()
+# buffet.account.display_account_info()
+
+# CODE BELOW IS FOR DIAGNOSTICS
 # ClassName.[method or function_name](empty)
 
-# WHY???  Adds to population_titurs and population_nero.  Why Both?
-BankAccount.user_population_titus()
+# BankAccount.user_population()
+# User.user_population_nero()
 
-# ADDS TO population_nero
-User.user_population_nero()
+# WHY???  Adds to population_titus and population_nero.  Why Both?
+# BankAccount.user_population()
+
+# # ADDS TO population_nero
+# User.user_population_nero()
+
+# ALSO SOMETIMES I GET THIS MESSAGE, I THINK IT'S RELATED TO SPACING:
+# Traceback (most recent call last):
+#   File "/Users/stephenkovach/Desktop/coding_dojo/python/python_assignments/09_users_with_bank_accounts/server.py", line 187, in <module>
+#     BankAccount.user_population_titus()
+# AttributeError: type object 'BankAccount' has no attribute 'user_population_titus'. Did you mean: 'user_population'?
+
 
 # ////////
 
