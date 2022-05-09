@@ -12,7 +12,7 @@ def showtime():
 
 # I'M EXPECTING A LINE 28 TO ACT LIKE LINE 14
 @app.route('/<int:x>/<int:y>')
-def checkerboard_3(x, y):
+def display_grid_variable(x, y):
     return f"x is {x} and y is {y}!"
 
 
@@ -24,11 +24,11 @@ def dojo():
 def level_one():
     return render_template("index.html", times=4, phrase="nero")	# CD notice the 2 new named arguments!
 
-# I'M EXPECTING A LINE 27 TO ACT LIKE LINE 14
+# I'M EXPECTING A LINE 27 TO ACT LIKE LINE 14,
 # @app.route('play/<int:x>')
 # def level_two(x):
 #     return render_template("index.html", times=4, phrase="nero")	# CD notice the 2 new named arguments!
-# -------also --why does changing above code block keep breaking my terminal
+# -------ALSO:  WHY does changing above code block keep breaking my terminal
 
 @app.route('/nero')
 def nero():
