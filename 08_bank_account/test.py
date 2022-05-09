@@ -142,27 +142,27 @@ buffet.display_interest_rate()
 
 # below is an attempt at chaining--Why is this not working? BECAUSE DIDN'T RETURN SELF
 
-buffet.deposit(1000).deposit(1000).withdrawal(25).withdrawal(50).yield_interest().display_account_info()
+buffet.deposit(1000).deposit(1000).withdrawal(25).withdrawal(50).withdrawal(1).withdrawal(1).yield_interest().display_account_info()
 
-# THIRD ACCOUNT
+# # THIRD ACCOUNT
 
-j_morgan.display_account_info()
-j_morgan.display_interest_rate()
-
-# what works
-
-# j_morgan.deposit(100)
-# j_morgan.deposit(100)
-# j_morgan.withdrawal(1)
-# j_morgan.withdrawal(1)
-# j_morgan.withdrawal(1)
-# j_morgan.withdrawal(1)
-# j_morgan.yield_interest()
 # j_morgan.display_account_info()
+# j_morgan.display_interest_rate()
 
-# below is an attempt at chaining--Why is this not working?
+# # what works
 
-j_morgan.deposit(100).withdrawal(1).withdrawal(1).withdrawal(1).yield_interest().display_account_info()
+# # j_morgan.deposit(100)
+# # j_morgan.deposit(100)
+# # j_morgan.withdrawal(1)
+# # j_morgan.withdrawal(1)
+# # j_morgan.withdrawal(1)
+# # j_morgan.withdrawal(1)
+# # j_morgan.yield_interest()
+# # j_morgan.display_account_info()
+
+# # below is an attempt at chaining--Why is this not working?
+
+# j_morgan.deposit(100).withdrawal(1).withdrawal(1).withdrawal(1).yield_interest().display_account_info()
 
 # NINJA BONUS:  What is it asking me to do?  How would I do it?  
 
