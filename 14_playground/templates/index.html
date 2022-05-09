@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .wrapper{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .box{
+            width:  200px;
+            height:  200px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+    </style>
+    <title>Dojo Playground</title>
+</head>
+
+<h3>My Flask Template</h3>
+<p>Phrase: {{ phrase }}</p>
+<p>Banana: {{ times }}</p>
+  
+{% for x in range(0,times): %}
+    <p>{{ phrase }}</p>
+{% endfor %}
+  
+{% if phrase == "hello" %}
+    <p>The phrase says hello</p>
+{% endif %}
+
+{% if phrase == "marcus" %}
+    <p>Do not ignore your anxities.  Discard them</p>
+{% endif %}
+
+<body>
+    
+    <!-- HTML 1 -->
+    <!-- <div class="wrapper">
+
+        {% for i in range(0, num) %}
+        <div class="box" style="background-color: {{color}};"></div>
+        {% endfor %}
+        <!-- wrapper -->
+    </div> -->
+
+    <!-- HTML 2 -CODE SNIPPET BELOW IS FROM DEMOS_10 -->
+    
+    <!-- <div class="wrapper2">
+        <h3>My Flask Template</h3>
+        <p>Phrase: {{ phrase }}</p>
+        <p>Times: {{ num }}</p>
+        
+        {% for x in range(0,num): %}
+        <p>{{ phrase }}</p>
+        {% endfor %}
+        
+        {% if phrase == "hello" %}
+        <p>The phrase says hello</p>
+        {% endif %}
+        
+        {% if phrase == "marcus" %}
+        <p>Do not escape your anxities.  Discard them</p>
+        {% endif %}
+        <!-- wrapper2 -->
+    </div> -->
+
+        <!-- HTML 3 -CODE SNIPPET BELOW IS FROM DEMOS_10 -->
+        <!-- ----WHY DOES THE CODE BELOW NOT REPEAT WHEN STACKED WITH HTML 2? -->
+    
+        <!-- <div class="wrapper3">
+        <h3>My Flask Template</h3>
+        <p>Phrase: {{ phrase }}</p>
+        <p>Banana: {{ times }}</p>
+            
+        {% for x in range(0,times): %}
+        <p>{{ phrase }}</p>
+        {% endfor %}
+            
+        {% if phrase == "hello" %}
+        <p>The phrase says hello</p>
+        {% endif %}
+            
+        {% if phrase == "marcus" %}
+        <p>Do not escape your anxities.  Discard them</p>
+        {% endif %}
+        <!-- wrapper3 -->
+        </div> -->
+
+        <!-- HTML 4 -CODE SNIPPET BELOW IS FROM DEMOS_10 -->
+      
+    
+    <h3>My Flask Template</h3>
+    <p>Phrase: {{ phrase }}</p>
+    <p>Times: {{ times }}</p>
+      
+    {% for x in range(0,times): %}
+        <p>{{ phrase }}</p>
+    {% endfor %}
+      
+    {% if phrase == "hello" %}
+        <p>The phrase says hello</p>
+    {% endif %}
+
+    {% if phrase == "marcus" %}
+        <p>Do not ignore your anxities.  Discard them</p>
+    {% endif %}
+
+</body>
+</html>
