@@ -1,0 +1,95 @@
+<!-- I AM 16_HTML_TABLES/TEMPLATES/INDEX.HTML -->
+
+<!-- what are the red dots on the side? -->
+
+<!-- jinga rhymes with ninja -->
+
+<!-- PLUG IN BOOTSTRAP -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+</head>
+<body>
+
+    <h2>Big Wigs</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- djinja html_ego [ NMCV singular]in egos [ NMCV plural]-->
+            {% for html_ego in egos %}
+                <tr>
+                    <!-- [tabledata][jinja][html_ego -definedLine28][server.py lines 19 -22 DATAFLOW?]-->
+                    <td>{{html_ego['first_name']}}</td>
+                    <td>{{html_ego['last_name']}}</td>
+                    <td>{{html_ego['first_name']}} {{html_ego['last_name']}}</td>
+
+                    <!-- QUESTION:BELOW LINE 2 BREAKS THE WHOLE CODE.  WHY? -->
+                    <!-- SELF ANSWER: THE COMMENTED DJINJA BROKE ALL THE CODE-->
+                    <!-- <td> html_ego['first_name'] typo_html_ego_['last_name']</td> -->
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- <h2>Big Wigs</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grand_poobah in big_wigs %}
+                <tr>
+                    <td>{{grand_poobah['first_name']}}</td>
+                    <td>{{grand_poobah['last_name']}}</td>
+                    <td>{{grand_poobah['first_name']}} {{student['last_name']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> -->
+
+
+    <!-- COPIED FROM 13_VID_FLASK_MORE_TEMPLATE_RENDERING  -->
+    <!-- <h2>Random Numbers!  Below Main Code</h2>
+        <!-- JINJA COMMENTING j ={ , j=} -->
+    <!-- <ul> purple comment arrows vs. yellow comment arrows -->
+        <!-- WHY? -->
+        <!-- j% for num in random_numbers %j -->
+            <!-- <li> jj num jj </li>
+        j{endfor %j
+    </ul>
+    <h2>Students</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            j% for student in students %j
+                <tr>
+                    <td>jjstudent['name']jj</td>
+                    <td>jjstudent['age']jj</td>
+                </tr>
+            j% endfor %j
+        </tbody>
+    </table>
+
+</body>
+</html> -->
