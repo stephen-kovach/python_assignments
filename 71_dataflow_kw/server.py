@@ -1,5 +1,5 @@
 #  I AM 70_POST_FORM_SUBMISSION_KW SERVER.PY
-# Start at 9:20am
+# Start at 9:20am  End 10:10
 # 71 I've seen all three instructors draw data flow diagrams
         # 71 is this on the LP?  Why not OR why hard to find?
         # 71 2:37 "wrap in bow"  the package is a great metaphor
@@ -51,8 +51,40 @@ def process_user():
     username = request.form["username"] # what is this doing?
     print("Don't promise twice what you can do at once.")
     print(f"{username} was here! 2")
-    print("This is 71")
-
+    print("")
+    print("/////////////////////////////////")
+    print("")
+    print("A little feedback:")
+    print("")
+    print("")
+    print("on the video Python April 2022")
+    print("")
+    print("at 11:30")
+    print("")
+    print("you said:")  
+    print("")
+    print("Flask is a toolbox.  A wrech is the only tool I can think of.")    
+    print("Corkscrew was the next thing that came to mind, but that is not a tool.")
+    print("")
+    print("--wrong--")
+    print("")
+    print("A corksrew is definitely a tool!")
+    print("")
+    print("It's literaly a screw!")  
+    print("")  # why not in the terminal
+    print("Want to know a fun fact that's tangentially related to screws?")
+    print("")
+    print("Ask me!")
+    print("")
+    print("")
+    print("Your videos have been super helpful by the way")
+    print("")
+    print("If it weren't for these videos, I'd be on AP")
+    print("")
+    print("lol")
+    print("")
+    print("")
+# 71 11:30  Flask is a toolbox  11:41 A corksrew is definitely a Tool!  It's literaly a screw!  Fun fact:  Achemdies Screw
     # KW print form info
     # KWV 24:45 never render on a post route --on LP?  Where?
 
@@ -146,4 +178,40 @@ if __name__ == "__main__":
 # If there were shorter videos, students could watch them before the lectures
 
 
-# each mini-lecture, two types of text.  BEFORE and AFTER.  Let us choose (but not worry about breaking)
+# each mini-lecture, two types of text.  BEFORE and AFTER.  
+# Let us choose (but not worry about breaking)
+
+# //////
+
+# Point of pride
+# instructor to making videos is as
+# PST Line making dishes on the menu
+
+# 71 5:09 - 6:00 Jason Question  No
+# 71 6:00 - 6:28 Chat Question No
+# 71 6:33 - 7:13  Asking if Diagrams here are clear
+                    # on the LP this kind of feedback could be built in
+# 71 7:40 oh I forgot, uneccarily recursive, on have been 
+# structure on LP
+
+# 71 8:35  - 8:50 Debug error, this wouldn't happen on a strcutured LP
+# 71 9:50 NEVER RENDER ON A POST ROUTE
+#               always redirect ing      Good Repetition
+
+# 71 11:30  Flask is a toolbox  11:41 A corksrew is definitely a Tool!  It's literaly a screw!  Fun fact:  Achemdies Screw
+
+# 71 12:45 -13:18 Jason Question OK,
+                # ultimately distracted Kaysee from a more polished segue
+
+# ////////////////////////////////////////////
+
+# Ultimate room for improvment on the LP is 
+        # Understanding the terrain  on-line, automated, instant-feedback
+                # missed opportunities for user interactivity
+
+                # AND ADAPT TEACHING METHODS OF THE TERRAIN
+                    # IN ADDITION TO 
+                    #       THE MANUALS AND VIDEOS
+                    #          THAT ALREADY EXISTS
+                    #           AND CAN CERTAINLY BE IMPROVED
+# NAPOLEON MAPS AND THE CORP 
