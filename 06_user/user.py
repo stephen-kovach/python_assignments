@@ -1,10 +1,12 @@
 
-class User:		# here's what we have so far
+class User:		# CD here's what we have so far
     def __init__(self, name, email):
         self.name = name
         self.email = email
         self.account_balance = 0
-    # adding the deposit method
+    # CD adding the deposit method
+
+    # [keyword] function_name(self, arguement1)
     def make_deposit(self, amount):	# takes an argument that is the amount of the deposit
     	self.account_balance += amount	# the specific user's account increases by the amount of the value received
     def make_withdrawal(self, amount):
@@ -20,6 +22,7 @@ class User:		# here's what we have so far
 
 guido = User("Guido van Rossum", "guido@python.com")
 monty = User("Monty Python", "monty@python.com")
+
 guido.make_deposit(100)
 guido.make_deposit(200)
 monty.make_deposit(50)
@@ -40,10 +43,10 @@ guido.transfer_money(monty, 50)
 monty.display_user_balance()
 guido.display_user_balance()
 
-# francis = User('Ajax', 'ajax@supervillian.org')
-# print(francis.name)
-# print(francis.account_balance)
-# francis.make_deposit(500)
-# print(francis.account_balance)
-# francis.make_deposit(-300)
-# print(francis.account_balance)
+francis = User('Ajax', 'ajax@supervillian.org')
+print(francis.name)
+print(francis.account_balance)
+francis.make_deposit(500)
+print(francis.account_balance)
+francis.make_deposit(-300)
+print(francis.account_balance)

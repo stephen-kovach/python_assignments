@@ -15,6 +15,9 @@ def showtime():
 def render_table():
     # [term for below--it connects to line 23 where else?  also on HTML?] =[]
     # Also the bracket underneath: is it creating a list, a dictionary? an object?  all three?
+                        #remember the Karlton.  never the grant
+                        # why do this?  what purpose does it serve?
+                        # clrty ovr ego, hw else cn ths be prsntd?
     head_honcho = [  
        {'first_name' : 'Michael', 'last_name' : "Choi"},
        {'first_name' : 'John', 'last_name' : "Supsupin"},
@@ -30,7 +33,7 @@ def nero():
 @app.route('/nero2')
 def nero_b():
     return 'Sorry Mom!'
-3
+
 # @app.route('/<int:x>/<int:y>')
 # def display_grid_variable(x, y):
 #     return f"x is {x} and y is {y}!"

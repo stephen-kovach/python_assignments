@@ -1,12 +1,12 @@
-#  I AM 72_session_kw backup_server.py
+# I AM 73 session_counter_kw server.py
 
-# KW PYTHON APRIL 2022 Session -->
+# KW PYTHON APRIL 2022 Session 18:59 -->
 
     # I tried reading "Reditecting" and "Session" on the platform
     # Not clear at all
     # I'm betting the video would be better
 
-# Start at 5-15 1:49pm End x:xxpm
+# Start at 5-15 1:49pm End 5:09pm
 
 # 71 I've seen all three instructors draw data flow diagrams
         # 71 is this on the LP?  Why not OR why hard to find?
@@ -47,13 +47,49 @@ app.secret_key = 'keep it secret, keep it safe--from mordor mwahahaha' # set a s
 # Form Route
 # /////////////////////////////////////////////////
 
+# 73 16:32 When the base route is set
 #KW this is the decorator or annotation for the following code chunk (the following method)  ME ===> define method?  which lines count as 'method'?
-@app.route('/')   # is this line called 'the base route'?
+@app.route('/')   # [when?] is this line called 'the base route'?  Me 5:03 Yes!
 def index():
     # KW Every route method should return something, in  this case we are rendering the given template
                 # ME ====> (does 'pass' count?)
-    print(request.form) # added 36:00 ish
-    return render_template("index.html")
+    print("========================Beginning") # Me 4:19 prints in terminal
+# 73 5:35 substitutes COPIED code accounted for below
+    if 'user' in session:
+        print('user exists!')
+    else:
+        print("key 'user' does NOT exist")
+        # Me 4:26 what input would trigger the above else statement to print?
+
+    print("========================End") # Me 4:19 does not print in terminal 
+    # print(request.form) # added [which video?]36:00 ish
+
+    # 73 13:14 adds line below
+    # session["Count"] = 0   #not sure what this counterexample is demonstrating
+    # TOGGLE ABOVE AND BELOW
+    # 73 13:14 comments out below 8 lines
+    if "count" in session:
+        # 73 8:19 KW note:  do something, count+1
+        # 73 9:14 added below
+        session["count"] +=1  # this will increment by 1
+    else:
+        session["count"] = 0
+        # Me 4:31 could even a consistent "" or ' syntax could help?  overkill?
+                # why not be on the same page?
+
+# COPIED =====> below code pasted from:  flask-flask-fundamentals-counter
+# if 'key_name' in session:
+#     print('key exists!')
+# else:
+#     print("key 'key_name' does NOT exist")
+# COPIED =====> above code pasted from:  flask-flask-fundamentals-counter
+
+    return render_template("index.html", count = session["count"])
+    # 9:54 BELOW substitued for ABOVE  ===> TRK: line 83, 73_session_counter_kw index.html
+    # return render_template("index.html")
+    # 73 6:32 Me 4:16
+    # "'Bobbothy' exists" does not print in terminal
+            # Me 4:17 I will try to rebuild it 
 
 # AT FIRST ON THE LP, IT WAS UNCLEAR HOW THE CODE SNIPPET (OR APPROXMIATE) BELOW WORKED
 # 22:14 handling processing of the form
@@ -139,11 +175,38 @@ def process_user():
 # 72 9:15 added below -Don't forget, delibrately making errors
 @app.route("/show")
 def show_user_info():
-    print("=============================" + session["user"]) #10:00 forgot to put user in ""
+    print("?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?" + session["user"]) #10:00 forgot to put user in ""
     # return render_template("show.html") #commented out at 72 15:17
 # 72 11:50 Session is empty by default.  12:15  Session is a big empty box,  it only stores something if we tell it to
 # 72 15:48 substitued 2 above for 1 below:
     return render_template("show.html", user_name = session["user"]) 
+
+
+# 73 1:07 added below: Reset Session to Empty
+# /////////////////////////////////////////////////
+# Reset Session to Empty
+# /////////////////////////////////////////////////
+
+# 73 2:12 added below
+@app.route("/reset")
+def reset_session():
+    session.clear()
+    return redirect("/")
+    # SO    1.  username stays unless
+    #       2.  unless "Reset Session" is clicked.
+    #           2a TRK: <a> tag on line 25, 73-b_session_counter show.html
+            # 73 3:41 this is like logging someone out
+
+# COPIED =====> below code pasted from:  flask-flask-fundamentals-counter
+# session.clear()		# clears all keys
+# session.pop('key_name')		# clears a specific key
+# COPIED =====> above code pasted from:  flask-flask-fundamentals-counter
+#
+#  Me: Next two routes are mine
+# /////////////////////////////////////////////////
+# Nero and Agrippina
+# /////////////////////////////////////////////////
+
 @app.route('/nero')
 def last_words_of_nero():
     return 'Too late!'
@@ -151,6 +214,11 @@ def last_words_of_nero():
 @app.route('/agrippina')
 def last_words_of_agrippina():
     return 'Smite me here, where the monster was nurtured!'
+
+# Me 2:55 What is the below code?
+# /////////////////////////////////////////////////
+# What is the below code?
+# /////////////////////////////////////////////////
 
 # KW the following two lines are what allow the server to run
 # KW these lins must ALWAYS be the last thing in your server files(s)
@@ -161,7 +229,7 @@ if __name__ == "__main__":
 
 
 
-
+# ///////////////////////////////////////////
 
 # 23:01  student asks tangental question about counter  
 # 23:10 great pause recording!
@@ -336,3 +404,23 @@ if __name__ == "__main__":
 
 # 73 0:40  Crtl shift R  What is that?
             # 73 0:45 ME 2:45 refreshes browser
+
+# 73 1:42 Pulled Code from the platform, 
+            # flask-flask-fundamentals-counter
+            # couldn't see map on YouTube
+            # stopped and checked 
+            # flask-flask-fundamentals-session
+            # could have shaved off time
+
+# Me 3:05 -3:11 bathroom break
+# I know this is silly lol, but I'm mangaing my time 
+# by first tracking it
+# hopefully I'll do less later
+
+# 73 3:50 - 3:59
+            # 1 - 10 Poll:  Great for lecture!
+            # ineffcient for instruction
+            # could have shaved off 0:09
+
+# I quoted KW 'Elephant in Room' because it's an effecrive mnemonic device!
+# 73 4:10  Elephant in the room:  Counting!

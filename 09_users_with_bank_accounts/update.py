@@ -54,7 +54,7 @@ class BankAccount:
     # [keyword] [method or function name](self): dtf colon
     def display_account_info(self):
         # [function](f"string text{self.variable -is this an instance?}")
-        # print(f"Balance: ${self.balance}")
+        print(f"Balance: ${self.balance}")
         print(self.balance)
         return self # NECESSARY FOR CHAINING
 

@@ -1,6 +1,4 @@
-<!-- 
-I AM 15_CHECKERBOARD/TEMPLATES/INDEX.HTML
- -->
+<!-- I AM 15_CHECKERBOARD/TEMPLATES/INDEX.HTML -->
 
  <!DOCTYPE html>
  <html lang="en">
@@ -8,89 +6,55 @@ I AM 15_CHECKERBOARD/TEMPLATES/INDEX.HTML
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="static/css/style.css">
+            <!-- static files need to be linked using jinja  -->
+            <!-- url_for takes 2 parameters; first is folder name, second is filename=""-->
+            <!-- url_for() is an existing function in jinja, needs to be named as is -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
      <title>Checkerboard</title>
 
-     <!-- <style> 
+     <!-- <style>
         table tr td{
             width: 50px;
             height: 50px
         }
-         .color1{
-             background-color: blue;
-         }
-         .color2{
-             background-color: red;
-         }
-     </style>
-      -->
- </head>
- <body>
-
     
-<!-- BELOW CODE WORKS WITH 15_checkerboard server.py line 22 -->
+        .color1{
+            background-color: blue;
+        }
+    
+        .color2{
+            background-color: red;
+        }
+    </style> -->
+
+</head>
+
+<body>
 
 <h1>4 by 4 Matrix</h1>
 <table class="table">
-    {% for i in range(4): %}
-        <tr .class="row">
-            {% for j in range(4): %}
+    {% for i in range(times): %}
+        <tr class="row">
+            {% for j in range(times): %}
             <td class = "color1"></td>
             <td class = "color2"></td>  
             {% endfor %}   
-            <!--row-->
+
         </tr>
 
-        <tr .class="row">
-            {% for j in range(4): %}
+        <tr class="row">
+            {% for j in range(times): %}
             <td class = "color2"></td>
             <td class = "color1"></td>   
             {% endfor %}      
-            <!--row-->
+
         </tr>
     {% endfor %}
-    <!-- table -->
+
 </table>
 
+</body>
 
-    <!-- HTML 3 -->
-
-    <!-- <h3>My Flask Template</h3>
-    <p>Phrase: {{ phrase }}</p>
-    <p>Times: {{ times }}</p>
-      
-    {% for x in range(0,times): %}
-        <p>{{ phrase }}</p>
-    {% endfor %}
-      
-    {% if phrase == "hello" %}
-        <p>The phrase says hello</p>
-    {% endif %}
-
-    {% if phrase == "marcus" %}
-        <p>Do not ignore your anxities.  Discard them</p>
-    {% endif %} -->
-
-        <!-- HTML 4
-
-        <h3>Which Emperor Are You?</h3>
-        <p>Phrase: {{ phrase }}</p>
-        <p>Times: {{ times }}</p>
-          
-        {% for x in range(0,times): %}
-            <p>{{ phrase }}</p>
-        {% endfor %}
-          
-        {% if phrase == "nero" %}
-            <p>Watch out for Galba</p>
-        {% endif %}
-
-        {% if phrase == "marcus" %}
-            <p>I did not ignore my anxities.  I discarded them</p>
-        {% endif %}
-     -->
- </body>
- </html>
-
+</html>
 
 <!-- START BACKWARDS?  Do that for 14_PLAYGROUND -->

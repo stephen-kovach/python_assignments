@@ -10,7 +10,7 @@ app = Flask(__name__)
 def showtime():
     return 'Amor Fati!'
 
-# I'M EXPECTING A LINES 27 AND 32 TO ACT LIKE LINE 14
+# I'M EXPECTING A LINES 30 AND 37 TO ACT LIKE LINE 14
 @app.route('/<int:x>/<int:y>')
 def display_grid_variable(x, y):
     return f"x is {x} and y is {y}!"
@@ -22,14 +22,18 @@ def dojo():
 
 @app.route('/play')
 def level_one():
+    # I AM COPYING CODE BELOW FROM A DIFFERENT ASSIGNMENT.  
+    # I DON'T THINK THE BELOW ARGUMENTS DO ANYTHING
     return render_template("index.html", times=4)	# CD notice the 2 new named arguments!
 
-# I'M EXPECTING A LINE 27 TO ACT LIKE LINE 14,
+# I'M EXPECTING A LINE 30 TO ACT LIKE LINE 14,
 @app.route('/play/4')
 def level_two():
+        # I AM COPYING CODE BELOW FROM A DIFFERENT ASSIGNMENT.  
+    # I DON'T THINK THE BELOW ARGUMENTS DO ANYTHING
     return render_template("index.html", times=4)	# CD notice the 2 new named arguments!
 
-# I'M EXPECTING A LINE 32 TO ACT LIKE LINE 14,
+# I'M EXPECTING A LINE 37 TO ACT LIKE LINE 14,
 @app.route('/play/<int:x>')
 def level_three(x):
     return render_template("index.html", times=x)	# CD notice the 2 new named arguments!

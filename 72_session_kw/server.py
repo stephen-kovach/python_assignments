@@ -1,14 +1,18 @@
-#  I AM 72_POST_FORM_SUBMISSION_KW SERVER.PY
+#  I AM 72_session_kw server.py
 
 # KW PYTHON APRIL 2022 Session -->
 
-# Start at 9:20am  End 10:10
+    # I tried reading "Reditecting" and "Session" on the platform
+    # Not clear at all
+    # I'm betting the video would be better
+
+# Start at 11:10am  End  1:12pm
 
 # 71 I've seen all three instructors draw data flow diagrams
         # 71 is this on the LP?  Why not OR why hard to find?
         # 71 2:37 "wrap in bow"  the package is a great metaphor
 
-# TA Question.  
+#DO I NEED TO ASK THESE Question?  
 # How do I get 39ish YO! to print in terminal 
 
 # KW PYTHON APRIL 2022 INTRO TO FORMS AND POST DATA
@@ -22,15 +26,26 @@
 # KW session - a type of data storage that permeates throughout the program
     #session doesn't contain anything until you tell it to store that information!
 # KW request - allows us to 'request' information like when we pull information from our form on the [can't see the word]
+
 from flask import Flask, render_template, redirect, session, request
         # Can we diagram what's happening above?
         # KW VID 9:00 line 16 is gray now because: not called on them yet
                         #"eventually imported", what does that mean
         
+# LP SESSION 0:52:  Use Session to Store variables and access them in any route
+            # This is so unhelpful
 
 # KW creates an instance utilizing the Flask framework and store it as 'app'
 app = Flask(__name__)
 # CD our index route will handle rendering our form
+# 72 2:57 below added == HEY! ===>> 72 3:20 MAKE A DIFFENENT SECRET KEY PER ASSIGNMENT (even a key slap like: "sadfkjhasdkjlfh" is fine)
+app.secret_key = 'keep it secret, keep it safe--from mordor mwahahaha' # set a secret key for security purposes
+            # 72 2:21 above is like an encryption 
+
+# 72 5:03 - 5:29 - ADDED "Form" and "Show Form" Below (watched it, that's 26 seconds to shave off)
+# /////////////////////////////////////////////////
+# Form Route
+# /////////////////////////////////////////////////
 
 #KW this is the decorator or annotation for the following code chunk (the following method)  ME ===> define method?  which lines count as 'method'?
 @app.route('/')   # is this line called 'the base route'?
@@ -48,14 +63,15 @@ def process_user():
     print("Cato the Elder")
     print(request.form)   #prints immutableMultiDict
     print(request.form["username"])
-    print(request.form["email"])
+    # print(request.form["email"])  #---this doesn't work.  why not?
     print("Yo!  This is the processing route")
     print("Cato the Younger")
     # print(f"{username} was here! 1")  --> this breaks the code
-    username = request.form["username"] # what is this doing?
+    username = request.form["username"] # not in terminal.  what is this doing?
+    # email = request.form["email"] # Nope 12:27 So does this add [term] to the [term --terminal?] 
     print("Don't promise twice what you can do at once.")
     print(f"{username} was here! 2")
-
+    # print(f"I swear {email} is somewhere around here...")
 
     # print("")
     # print("/////////////////////////////////")
@@ -94,11 +110,35 @@ def process_user():
     # KW print form info
     # KWV 24:45 never render on a post route --on LP?  Where?
 
+    # 72 6:00 Added BELOW,  External Processing: I want to change the label  -what does that mean?
+    session["user"] = request.form["username"]
+    
+    
+    # 72 8:42 new edit for 5ish below
+    return redirect("/show")
+    
+    
+    
                 # KWV 25:50 redirecting to base route, line 25--then 'returns' at line 29
-    return redirect("/")
+    # return redirect("/")
                 # KWV 26:20 render_template renders an html
                 #           redirect renders a url
     # return redirect("/", username=username) #37:18 noticed this line at 
+
+
+# 72 5:03 - 5:29 - ADDED "Form" and "Show Form" Below (watched it, that's 26 seconds to shave off)
+# /////////////////////////////////////////////////
+# Show Form Info Route
+# /////////////////////////////////////////////////
+
+# 72 9:15 added below -Don't forget, delibrately making errors
+@app.route("/show")
+def show_user_info():
+    print("=============================" + session["user"]) #10:00 forgot to put user in ""
+    # return render_template("show.html") #commented out at 72 15:17
+# 72 11:50 Session is empty by default.  12:15  Session is a big empty box,  it only stores something if we tell it to
+# 72 15:48 substitued 2 above for 1 below:
+    return render_template("show.html", user_name = session["user"]) 
 @app.route('/nero')
 def last_words_of_nero():
     return 'Too late!'
@@ -232,3 +272,54 @@ if __name__ == "__main__":
             # Ask for another demo 
             # take notes in VSCode
             # push it to github
+
+# There should be a standardized way to divide the videos
+
+        # consitency would encourage organization
+
+# ALSO
+
+# If I was able to watch an instructional video before a lecture
+        # a.  I would have some of my questions answered already 
+        # and b. I would bring better questions to the lecture
+
+# Again.  a more dynamic, interactive and responsuve LP 
+    # would empower us to learn
+
+# Also on Zoom, how do I add an off picture and edit my name
+
+
+# 72 0:23 do a good job of breaking down   -nope!
+# This is more "technical, educational, more comprehensive"  --nope!  just bad writing
+# more "application"  --this is the purpose of a leture
+        # it must also be done on LP
+        # no excuse not to
+
+# 72 8:00 Took a Screen Shot of diagram
+            # Is there something like this on the platform?
+                # Why not?  OR  Why isn't it easy to find?
+# 72 8:05   Chat a 1!  oh no!  oh good!  a 10!
+            # could have shaved off 10 secs.  This adds up!
+
+# 72 9:24 I'm typing this out myself, but hareder to do in chunks
+        # come back to this
+
+# 72 10:16  KW gets a key errror
+        # I get a Template not found:
+                # jinja2.exceptions.TemplateNotFound: show.html
+        # above 2 answered at 72 10:50
+
+# 72 13:10   ---"grab container up"
+# Me 12:45
+#             creates show.html very quickly
+#             walks through what is probably a good habit
+#             but it's almost an aside
+#             I will probably use this technique
+
+# Also Design a Short Cut Key Bank on platform (dynamlic)
+    # much better than a link from some excelsheets
+
+# SCREEN SHOT!
+# 72 16:25
+        # is there a disagram like this on the LP 
+        # Why not OR why is it not easy to find?
