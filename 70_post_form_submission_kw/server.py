@@ -15,6 +15,7 @@
 # KW session - a type of data storage that permeates throughout the program
     #session doesn't contain anything until you tell it to store that information!
 # KW request - allows us to 'request' information like when we pull information from our form on the [can't see the word]
+from venv import EnvBuilder
 from flask import Flask, render_template, redirect, session, request
         # Can we diagram what's happening above?
         # KW VID 9:00 line 16 is gray now because: not called on them yet
@@ -37,11 +38,12 @@ def index():
 # BELOW KWV 22:40  are users designed to post catch data?.  NCV Methods with an 's'
 @app.route('/users', methods=["POST"])
 def process_user():
+    print("Cato the Elder")
     print(request.form)
     print(request.form["username"])
     print(request.form["email"])
     print("YO!  This is the processing route")
-
+    print("Cato the Younger")
     # KW print form info
 
     # KWV 24:45 never render on a post route --on LP?  Where?
@@ -87,5 +89,39 @@ if __name__ == "__main__":
                     # my termnial still does not say 
                         #    "YO!  This is the processing route"
     
-    # MAY 14 10:07 I'm going to keep pushing on
+    # TIME MAY 14 10:07 I'm going to keep pushing on
         # resuming at 30:23
+
+        # 10:18!  Wait now my terminal works!  Why?  
+        # Taking a screenshot and adding it to File/Pics
+                # not effeicient 10:22
+                    # WORKFLOW, HOW DO I REDIRECT AUTO FILES ON DESKTOP
+        
+        # How do I print Yo! etc in my terminal
+
+                # does it autmoatically come after enter email?
+
+    # TIME 10:29  I figured out the error!  Time to move on!
+        # in terminal:
+        # Cato the Elder 
+        #  immutatable dictionary ([(username) yo (email) yo@mama.com  
+        # (username) yo 
+        # (email) yo@mama.com  
+        # YO!  This is the processing route!
+        # Cato the Younger
+
+# 31:30 Good Circling Back  Never render on post route
+
+        # 31:54 on scale at 1 - 10  I'm at an 8!
+
+# 32:02 -34:21  not a tangent, but something I already figured out
+# is that saquarra?  webfun cohort
+    # didn't quite understand the question, not reviewing it
+
+
+# Isn't there somewhere on the introduction part of the platform
+# where they make suggestions on how to manage time lol?
+
+# 35:41  "So when I do this"  do what?
+
+
