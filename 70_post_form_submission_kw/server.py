@@ -15,11 +15,10 @@
 # KW session - a type of data storage that permeates throughout the program
     #session doesn't contain anything until you tell it to store that information!
 # KW request - allows us to 'request' information like when we pull information from our form on the [can't see the word]
-from venv import EnvBuilder
 from flask import Flask, render_template, redirect, session, request
         # Can we diagram what's happening above?
         # KW VID 9:00 line 16 is gray now because: not called on them yet
-                        #eventually imported, what does that mean
+                        #"eventually imported", what does that mean
         
 
 # KW creates an instance utilizing the Flask framework and store it as 'app'
@@ -31,28 +30,33 @@ app = Flask(__name__)
 def index():
     # KW Every route method should return something, in  this case we are rendering the given template
                 # ME ====> (does 'pass' count?)
+    print(request.form) # added 36:00 ish
     return render_template("index.html")
 
 # AT FIRST ON THE LP, IT WAS UNCLEAR HOW THE CODE SNIPPET (OR APPROXMIATE) BELOW WORKED
 # 22:14 handling processing of the form
 # BELOW KWV 22:40  are users designed to post catch data?.  NCV Methods with an 's'
-@app.route('/users', methods=["POST"])
+@app.route('/users', methods=["POST"]) # ====>WHY does it say "Method not found" in browser
 def process_user():
     print("Cato the Elder")
-    print(request.form)
+    print(request.form)   #prints immutableMultiDict
     print(request.form["username"])
     print(request.form["email"])
-    print("YO!  This is the processing route")
+    print("Yo!  This is the processing route")
     print("Cato the Younger")
-    # KW print form info
+    # print(f"{username} was here! 1")  --> this breaks the code
+    username = request.form["username"] # what is this doing?
+    print("Don't promise twice what you can do at once.")
+    print(f"{username} was here! 2")
 
+    # KW print form info
     # KWV 24:45 never render on a post route --on LP?  Where?
 
                 # KWV 25:50 redirecting to base route, line 25--then 'returns' at line 29
     return redirect("/")
                 # KWV 26:20 render_template renders an html
                 #           redirect renders a url
-
+    # return redirect("/", username=username) #37:18 noticed this line at 
 @app.route('/nero')
 def last_words_of_nero():
     return 'Too late!'
@@ -125,3 +129,17 @@ if __name__ == "__main__":
 # 35:41  "So when I do this"  do what?
 
 
+# I'm considering the tangents a tax on my time
+# the taxes need to be lowered
+
+
+# how to read W3Schools  Try it yourself
+#    how does it work?
+
+# LP  Example Code Builds.  Don't worry about breaking it
+    #    I'm noticing students reluctant to do it
+
+# If there were shorter videos, students could watch them before the lectures
+
+
+# each mini-lecture, two types of text.  BEFORE and AFTER.  Let us choose (but not worry about breaking)
