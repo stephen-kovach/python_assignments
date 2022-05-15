@@ -6,7 +6,7 @@
     # Not clear at all
     # I'm betting the video would be better
 
-# Start at 1:49 End 
+# Start at 5-15 1:49pm End x:xxpm
 
 # 71 I've seen all three instructors draw data flow diagrams
         # 71 is this on the LP?  Why not OR why hard to find?
@@ -76,10 +76,15 @@ def process_user():
     # print("")
     # print("/////////////////////////////////")
     # print("")
+    # print("Your videos have been super helpful!")
+    # print("")
+    # print("If it weren't for these videos, I'd be on AP")
+    # print("")
+    # print("lol")
+    # print("")
     # print("A little feedback:")
     # print("")
-    # print("")
-    # print("on the video Python April 2022")
+    # print("on the video: Python April 2022 Form Dataflow")
     # print("")
     # print("at 11:30")
     # print("")
@@ -92,20 +97,20 @@ def process_user():
     # print("")
     # print("A corksrew is definitely a tool!")
     # print("")
-    # print("It's literaly a screw!")  
+    # print("(it's literaly a screw!)")
+    # print("")
+    # print("btw a corkscrew is really only one of the few tools I know how to use well")
+    # print("")
+    # print("Can't open a bottle without one")  
+    # print("")
+    # print("Not even with my teeth!")  
     # print("")  # why not in the terminal
     # print("Want to know a fun fact that's tangentially related to screws?")
     # print("")
     # print("Ask me!")
     # print("")
     # print("")
-    # print("Your videos have been super helpful by the way")
-    # print("")
-    # print("If it weren't for these videos, I'd be on AP")
-    # print("")
-    # print("lol")
-    # print("")
-    # print("")
+
 
     # KW print form info
     # KWV 24:45 never render on a post route --on LP?  Where?
@@ -323,3 +328,11 @@ if __name__ == "__main__":
 # 72 16:25
         # is there a disagram like this on the LP 
         # Why not OR why is it not easy to find?
+
+# 73 0:09 How to clear our session
+# 73 0:20 missed opportunity to have a clear LP
+        # the reason KW doesn't use LP example
+        # is because LP example isn't clear
+
+# 73 0:40  Crtl shift R  What is that?
+            # 73 0:45 ME 2:45 refreshes browser
