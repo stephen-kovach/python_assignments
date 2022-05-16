@@ -1,3 +1,25 @@
-h1{
-    color: red;
+
+
+
+.bigger-font{
+    font-size: 35px;
+}
+p{
+    text-align: center;
+}
+
+.box_FLV_vespasian{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.green{
+    background-color: green;
+    margin-right: 5px;
+}
+
+.red{
+    background-color: red;
 }

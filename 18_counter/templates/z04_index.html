@@ -1,4 +1,4 @@
-<!-- I AM 18_counter z02_index.html -->
+<!-- I AM 18_counter z03_index.html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,54 +15,31 @@
 
     <div class="container_FLV_vespasian">
 
-    <p>Counter</p>    
+    <p class="bigger-font">Counter</p>    
     <!-- TRK? ==> Does it go to line 36, 18_counter server.py -->
-    <p>{{ count }}<p>
+    <p>{{ count }} Times!<p>
 
 <!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
     <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
-    <form action='/users' method='post'>
+    <!-- <form action='/users' method='post'> -->
     <!-- TRK?  Does it go to line 36, 18_counter server.py-->
 
-        <label for='name'>Name:</label>
-        <input type='text' name='username'>
+    <!-- <div class="box_FLV_vespasian">
+        <input class="green" type='submit' value='Click!'>
+        <input class="red" type='submit' value='Reset!'>
+    </div>  -->
 
-        <input type='submit' value='click'>
-        <input type='submit' value='reset'>
-
-    </form>
+    <div class="box_FLV_vespasian">
+        <input class="green" type='submit' value='Add Two!'>
+        <input class="red" type='submit' value='Reset!'>
+    </div> 
+    <!-- </form> -->
 
         
 <!-- container_FLV_vespasian -->
     </div>
 
 
-
-    <div class="container_FLV_titus">
-
-    <!-- TRK? ==> Does it go to line 36, 18_counter server.py -->
-        <h1>Count FLV_titus {{ count }}</h1>
-
-        <h3>Create a User FLV_titus </h3>
-<!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
-    <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
-        <form action='/users' method='post'>
-    <!-- TRK?  Does it go to line 36, 18_counter server.py-->
-
-            <label for='name'>Name:</label>
-            <input type='text' name='username'>
-
-            <label for='email'>Email:</label>
-            <input type='text' name='email'>
-
-            <input type='submit' value='create user'>
-
-    </form>
-        
-
-
-<!-- container_FLV_titus -->
-    </div>
 
     <div class="container_FLV_domitian">
 
