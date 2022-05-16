@@ -8,11 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Me 12:55 should each html page have a diffent title? -->
     <title>18-b Counter</title>
-    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-
-    <h1>stark_rob</h1>
 
     <!-- class="abstract-concept_narrative_subplot" -->
     <div class="container_stark_rob">
@@ -20,41 +17,42 @@
     <!-- added at 72 13:36    13:59 ctrl + Shift + R b what did that do?-->
     <p>{{ session["user"]}}</p>
 
-    <!-- added below at 73 0:35 -->
+    <!-- added below at 0:35 -->
     <a href="/reset">Reset Session</a>
 
     <!-- container_stark_rob -->
-
     </div>
-
-    <h1>stark_sansa</h1>
 
     <!-- class="abstract-concept_narrative_subplot" -->
     <div class="container_stark_sansa">
 
-    <!-- added at 72 13:36    13:59 ctrl + Shift + R b what did that do?-->
-    <p>{{ session["user"]}}</p>
-
-    <!-- added below at 73 0:35 -->
-    <a href="/reset">Reset Session</a>
-
-    <!-- container_stark_sansa -->
+        <!-- added at 72 15:48, this the same above, why?  why not?   -->
+        <p>{{username}}</p>  
+        <!-- why is above code not on display in browser?-->
+    
+        <!-- container_stark_sansa -->
     </div>
 
-    <h1>stark_arya</h1>
 
     <!-- class="abstract-concept_narrative_subplot" -->
     <div class="container_stark_arya">
 
-    <!-- added at 72 13:36    13:59 ctrl + Shift + R b what did that do?-->
-    <p>{{ session["user"]}}</p>
+        <!-- added at 72 13:36    13:59 ctrl + Shift + R b what did that do?-->
+         <p>{{ session["user"]}}</p>
+        
+        <!-- container_stark_arya -->
+        </div>
 
-    <!-- added below at 73 0:35 -->
-    <a href="/reset">Reset Session</a>
-
-    <!-- container_stark_arya -->
+    <!-- class="abstract-concept_narrative_subplot" -->
+    <div class="container_stark_arya">
+        
+        <!-- added at 72 15:48, this the same above, why?  why not?   -->
+        <p>{{username}}</p>  
+        <!-- why is above code not on display in browser?-->
+            
+        <!-- container_stark_arya -->
     </div>
-
+                
 </body>
 </html>
 

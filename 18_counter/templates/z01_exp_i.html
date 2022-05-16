@@ -8,41 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Me 12:55pm should each html page have a diffent title? -->
     <title>18-a Counter</title>
-    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-
     <div class="container_FLV_vespasian">
 
-    <h1>Count</h1>
     <!-- TRK? ==> Does it go to line 36, 18_counter server.py -->
-    <h3>{{ count }}</h1>
+    <h1>Count FLV_vespasian {{ count }}</h1>
 
-<!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
-    <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
-    <form action='/users' method='post'>
-    <!-- TRK?  Does it go to line 36, 18_counter server.py-->
-
-        <label for='name'>Name:</label>
-        <input type='text' name='username'>
-
-        <input type='submit' value='click'>
-        <input type='submit' value='reset'>
-
-    </form>
-
-        
-<!-- container_FLV_vespasian -->
-    </div>
-
-
-    <div class="container_FLV_titus">
-
-    <!-- TRK? ==> Does it go to line 36, 18_counter server.py -->
-    <h1>Count FLV_titus {{ count }}</h1>
-
-    <h3>Create a User FLV_titus </h3>
+    <h3>Create a User FLV_vespasian </h3>
 <!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
     <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
     <form action='/users' method='post'>
@@ -58,9 +32,59 @@
 
     </form>
         
-<!-- container_FLV_titus -->
+<!-- container_FLV_vespasian -->
     </div>
 
 
+    <div class="container_FLV_titus">
+
+        <!-- 73 9:54 TRK==> line 27 18_counter server.py -->
+        <h1>Count FLV_titus {{ count }}</h1>
+    
+        <h3>Create a User FLV_titus</h3>
+    <!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
+        <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
+        <form action='/users' method='post'>
+        <!-- TRK?  Does it go to line 36, 18_counter server.py-->
+    
+            <label for='name'>Name:</label>
+            <input type='text' name='username'>
+    
+            <label for='email'>Email:</label>
+            <input type='text' name='email'>
+    
+            <input type='submit' value='create user'>
+    
+        </form>
+            
+    <!-- container_FLV_titus -->
+        </div>
+
+
+<div class="container_FLV_domitian">
+
+    <!-- TRK? ==> Does it go to line 36, 18_counter server.py -->
+    <h1>Count FLV_domitian {{ count }}</h1>
+
+    <h3>Create a User FLV_domitian</h3>
+<!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
+    <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
+    <form action='/users' method='post'>
+    <!-- TRK?  Does it go to line 36, 18_counter server.py-->
+
+        <label for='name'>Name:</label>
+        <input type='text' name='username'>
+
+        <label for='email'>Email:</label>
+        <input type='text' name='email'>
+
+        <input type='submit' value='create user'>
+        <!-- me 6:35pm why do ABOVE 7 lines copy in the wrong margins? -->
+    </form>
+
+<!-- container_FLV_domitian -->
+    </div>
+
+            
 </body>
 </html>
