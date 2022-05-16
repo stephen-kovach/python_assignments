@@ -15,6 +15,20 @@ p{
     padding: 10px;
 }
 
+.container_FLV_titus{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.container_FLV_domitian{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+
 .green{
     background-color: green;
     margin-right: 5px;
@@ -24,7 +38,12 @@ p{
     background-color: red;
 }
 
-.buttons{
+.links{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.forms{
     display: flex;
     justify-content: center;
     margin: 10px;
@@ -32,6 +51,11 @@ p{
 
 a{
     margin-right: 5px;
+}
+
+img{
+    /* width: 100px; */
+    height: 300px;
 }
 
 /* .center-me{

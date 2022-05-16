@@ -15,45 +15,46 @@
 
 
     <div class="container_FLV_vespasian">
-
-    <p class="bigger-font">Counter</p>    
-    <!-- TRK? ==> Does it go to line 36, 18_counter server.py -->
-    <p>{{ count }} Times!<p>
-
-    <div class="buttons">
+        <p class="bigger-font">Counter</p>    
+        <!-- TRK? ==> Does it go to line 22, 18_counter server.py -->
+        <p>{{ count }} Times!<p>
+    <div class="links">
         <a href="/">Click Me!</a>
         <a href="/destroy_session">Reset!</a>
     </div>
-    <div class="buttons">
+    <div class="links">
         <a href="/add2">Add Two!</a>
         <a href="/nero">Nero...</a>
     </div>
+    <div class="links">
+        <a href="/subtract10">Subtract Ten!</a>
+        <a href="/agrippina">Agrippina</a>
+    </div>
+    <div class="links">
+        <a href="/multiply5">Multiply Five!</a>
+        <a href="/seneca">Seneca!</a>
+    </div>
+    <div class="links">
+        <a href="/divide2">Divide Two!</a>
+        <a href="/galba">Galba</a>
+    </div>   
 
-<!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
-    <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
-    <!-- <form action='/users' method='post'> -->
-    <!-- TRK?  Does it go to line 36, 18_counter server.py-->
+    <div class="forms">
+        <!-- Why does H3 display below the form? -->
+        <h3>How much should we add?  You decide!</h3>
 
-    <!-- <div class="box_FLV_vespasian">
-        <input class="green" type='submit' value='Click!'>
-        <input class="red" type='submit' value='Reset!'>
-    </div>  -->
-
-    <!-- <div class="box_FLV_vespasian">
         <form action='/users' method='post'>
-            <input action="/add2" class="green" type='submit' value='Add Two!'>
+            <!-- I think I have the for, type, and name wrong -->
+            <label for='number'>Add it!:</label>
+            <input type='number' name='number'>
+    
+            <input type='submit' value='Add it!'>
         </form>
-        <form action='/users' method='post'>
-            <input action="/destroy_session" class="red" type='submit' value='Reset!'>
-        </form> -->
-    <!-- box_FLV_vespasian
-    </div> -->
-
-        
+    </div>
 <!-- container_FLV_vespasian -->
     </div>
 
-    <div class="box_FLV_vespasian">
+    <div class="container_FLV_titus">
 
         <!-- won't [term -render?] -->
         <form action='/add2' method='post'>
@@ -65,8 +66,26 @@
             <input class="red" type='submit' value='Reset!'>
         </form>
 
-    <!-- box_FLV_vespasian -->
+
+    <!-- container_FLV_titus -->
     </div>
+
+    <div class="container_FLV_domitian">
+
+        <!-- won't [term -render?] -->
+        <form action='/add2' method='post'>
+            <input class="green" type='submit' value='Add Two!'>
+        </form>
+
+        <!-- won't [term -render?] -->
+        <form action='/destroy_session' method='post'>
+            <input class="red" type='submit' value='Reset!'>
+        </form>
+
+
+    <!-- container_FLV_domitian -->
+    </div>
+
 
         
 

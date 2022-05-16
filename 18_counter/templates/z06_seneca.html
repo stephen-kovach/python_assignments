@@ -1,0 +1,41 @@
+<!-- I AM 18_counter z06_seneca.html -->
+
+<!-- hard coding url add2 will add 2 to the count -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Me 12:55pm should each html page have a diffent title? -->
+    <title>18-z02 Counter</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <div class="center-me">
+        <h1>It's never too late</h1>
+        <h2>Let's Keep Adding
+        </h2>
+    </div>
+    <div class="center-me">
+        <img src="/static/scrsh/nero-seneca2.jpg" alt="nero-seneca2">
+        <h3>Keep Counting By 1</h3>
+        <!-- below works -->
+        <a href="/">Add 1 and go back</a>
+        <!-- below doesn't work -->
+        <a href="/">Add 5 and go back</a>
+        <!-- below works -->
+        <a href="/seneca-adds">Add 1 and Stay Here</a>
+        <!-- below doesn't work -->
+        <a href="/seneca-adds5">Add 5 and Stay Here</a>
+        <!-- why won't below code keep track of the count? -->
+        <h3>{{ count }} Times!</h3>
+
+        <!-- How would I set up the code below? Attempt at line -->
+        <a href="/destroy_session_seneca">Stay Here and Start Over</a>
+
+        <a href="/destroy_session">Go Back and Start Over</a>
+    </div>
+</body>
+</html>
