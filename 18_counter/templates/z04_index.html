@@ -1,5 +1,6 @@
 <!-- I AM 18_counter z03_index.html -->
 
+<!-- hard coding url add2 will add 2 to the count -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,42 +31,35 @@
     </div>  -->
 
     <div class="box_FLV_vespasian">
-        <input class="green" type='submit' value='Add Two!'>
-        <input class="red" type='submit' value='Reset!'>
-    </div> 
-    <!-- </form> -->
+        <form action='/users' method='post'>
+            <input action="/add2" class="green" type='submit' value='Add Two!'>
+        </form>
+        <form action='/users' method='post'>
+            <input action="/destroy_session" class="red" type='submit' value='Reset!'>
+        </form>
+    <!-- box_FLV_vespasian
+    </div> -->
 
         
 <!-- container_FLV_vespasian -->
     </div>
 
+    <div class="box_FLV_vespasian">
 
+        <!-- won't [term -render?] -->
+        <form action='/add2' method='post'>
+            <input class="green" type='submit' value='Add Two!'>
+        </form>
 
-    <div class="container_FLV_domitian">
+        <!-- won't [term -render?] -->
+        <form action='/destroy_session' method='post'>
+            <input class="red" type='submit' value='Reset!'>
+        </form>
 
-    <p>Counter</p>    
-    <!-- TRK? ==> Does it go to line 36, 18_counter server.py -->
-    <p>{{ count }}<p>
-
-<!-- KWV:  13:45  The outer shell of our form is comprised of three main aspects -->
-    <!-- action, method, (below) and submit button (10 below) MUST BE INTACT-->
-    <form action='/users' method='post'>
-    <!-- TRK?  Does it go to line 36, 18_counter server.py-->
-
-        <label for='name'>Name:</label>
-        <input type='text' name='username'>
-
-        <input type='submit' value='click'>
-        <input type='submit' value='reset'>
-
-    </form>
-
-        
-<!-- container_FLV_domitian -->
+    <!-- box_FLV_vespasian -->
     </div>
 
-
-    
+        
 
 </body>
 </html>

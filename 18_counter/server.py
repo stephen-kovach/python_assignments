@@ -23,7 +23,7 @@ def index():
     #     # Me 4:26pm what input would trigger the above else statement to print?
     # print("========================End") # Me 5:57pm track when prints in terminal 
 
-
+    print("went through '/'")
     if "count" in session:
         session["count"] +=1 # this will increment by 1
     else:
@@ -40,8 +40,33 @@ def index():
 #             # ====>WHY does it say "Method not found" in browser
 #             # ====> Me 6:00pm is it because it's what prints in terminal?
 
+@app.route('/add2')  
+def add_2():
+
+    # print("========================Beginning") # Me 4:19 prints in terminal
+    # # ME 5:55pm where is below code hooked up?  line 18-47-72, 18-a_counter index.html
+    # if 'user' in session:  # Me 6:41pm changed 19 and 22 to user_a--still works
+    #     print('user exists!')
+    # else:
+    #     print("key 'user' does NOT exist")
+    #     # Me 4:26pm what input would trigger the above else statement to print?
+    # print("========================End") # Me 5:57pm track when prints in terminal 
+    print("went through '/add2'")
+    if "count" in session:
+        session["count"] +=1 # this will increment by 1 (total after line 28 is 2)
+    # else:
+    #     session["count"] = 1
+
+# TOGGLE
+    # return render_template("index.html", count = session["count"]) 
+    # is ABOVE code hooked up to line 16, 18-a_counter index.html?
+    return redirect("/") 
+
+
+# @app.route('users')  
 # def process_user():
-   
+#     print("user")
+#     return redirect("/")
 #     # 72 8:42 new edit for 5ish below
 #     return redirect("/show") #==> to line 71 server.py?
     
@@ -78,6 +103,7 @@ def index():
 
 @app.route("/destroy_session")
 def destroy_session():
+    print("went through '/destroy_session'")
     session.clear()
     return redirect("/") #==> to line 14 server.py?
     # SO    1.  username stays unless
