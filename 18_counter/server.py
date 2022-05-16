@@ -14,92 +14,32 @@ app.secret_key = 'keep it secret, keep it safe--from mordor mwahahaha' # set a s
 @app.route('/')  
 def index():
 
-    # print("========================Beginning") # Me 4:19 prints in terminal
-    # # ME 5:55pm where is below code hooked up?  line 18-47-72, 18-a_counter index.html
-    # if 'user' in session:  # Me 6:41pm changed 19 and 22 to user_a--still works
-    #     print('user exists!')
-    # else:
-    #     print("key 'user' does NOT exist")
-    #     # Me 4:26pm what input would trigger the above else statement to print?
-    # print("========================End") # Me 5:57pm track when prints in terminal 
-
-    print("went through '/'")
     if "count" in session:
-        session["count"] +=1 # this will increment by 1
+        session["count"] +=1 
     else:
         session["count"] = 1
 
-# TOGGLE
-    # return render_template("index.html", count = session["count"]) 
-    # is ABOVE code hooked up to line 16, 18-a_counter index.html?
     return render_template("z04_index.html", count = session["count"]) 
-    # is ABOVE code hooked up to line 16, 18-counter z02_index.html?
-
-# BELOW KWV 22:40  are users designed to post catch data?.  NCV Methods with an 's'
-# @app.route('/users', methods=["post"]) 
-#             # ====>WHY does it say "Method not found" in browser
-#             # ====> Me 6:00pm is it because it's what prints in terminal?
-
+ 
 @app.route('/add2')  
 def add_2():
-
-    # print("========================Beginning") # Me 4:19 prints in terminal
-    # # ME 5:55pm where is below code hooked up?  line 18-47-72, 18-a_counter index.html
-    # if 'user' in session:  # Me 6:41pm changed 19 and 22 to user_a--still works
-    #     print('user exists!')
-    # else:
-    #     print("key 'user' does NOT exist")
-    #     # Me 4:26pm what input would trigger the above else statement to print?
-    # print("========================End") # Me 5:57pm track when prints in terminal 
     print("went through '/add2'")
     if "count" in session:
         session["count"] +=1 # this will increment by 1 (total after line 28 is 2)
-    # else:
-    #     session["count"] = 1
-
-# TOGGLE
-    # return render_template("index.html", count = session["count"]) 
-    # is ABOVE code hooked up to line 16, 18-a_counter index.html?
+        # I still don't know what session means
     return redirect("/") 
 
-
-# @app.route('/users')  
-# def process_user():
-#     print("user")
-#     return redirect("/")
-#     # 72 8:42 new edit for 5ish below
-#     return redirect("/show") #==> to line 71 server.py?
-    
 
 # /////////////////////////////////////////////////
 # Show Form Info Route
 # /////////////////////////////////////////////////
 
-# 72 9:15 added below -Don't forget, delibrately making errors
-# @app.route("/show")
-# def show_user_info():
-#     print("?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?" + session["user"]) #10:00 forgot to put user in ""
-#     # return render_template("show.html") #commented out at 72 15:17
-# # 72 11:50 Session is empty by default.  12:15  Session is a big empty box,  it only stores something if we tell it to
-# # 72 15:48 substitued 2 above for 1 below:
-#     return render_template("show.html", user_name = session["user"]) 
-#     # where is ABOVE user_name hooked up?
-#     # Me 8:49pm is it lines 21 & 36, 18-b_counter show.html 
 
 
 # /////////////////////////////////////////////////
 # Reset Session to Empty
 # /////////////////////////////////////////////////
 
-# 73 2:12 added below
-# @app.route("/reset")
-# def reset_session():
-#     session.clear()
-#     return redirect("/") #==> to line 14 server.py?
-#     # SO    1.  username stays unless
-#     #       2.  unless "Reset Session" is clicked.
-#     #           2a TRK: <a> tag on line 25, 73-b_session_counter show.html
-#             # 73 3:41 this is like logging someone out
 
 @app.route("/destroy_session")
 def destroy_session():
@@ -118,7 +58,8 @@ def destroy_session():
 
 @app.route('/nero')
 def last_words_of_nero():
-    return 'Too late!'
+    print("Too late!")
+    return render_template("z05_index.html")
 
 @app.route('/agrippina')
 def last_words_of_agrippina():
