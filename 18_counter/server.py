@@ -16,10 +16,10 @@ def index():
 
     print("========================Beginning") # Me 4:19 prints in terminal
     # ME 5:55pm where is below code hooked up?  line 18-47-72, 18-a_counter index.html
-    if 'user_a' in session:  # Me 6:41pm changed 19 and 22 to user_a--still works
-        print('user_b exists!')
+    if 'user' in session:  # Me 6:41pm changed 19 and 22 to user_a--still works
+        print('user exists!')
     else:
-        print("key 'user_c' does NOT exist")
+        print("key 'user' does NOT exist")
         # Me 4:26pm what input would trigger the above else statement to print?
     print("========================End") # Me 5:57pm track when prints in terminal 
 
