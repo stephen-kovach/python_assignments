@@ -72,6 +72,7 @@ def show_user_info():
 # 72 11:50 Session is empty by default.  12:15  Session is a big empty box,  it only stores something if we tell it to
 # 72 15:48 substitued 2 above for 1 below:
     return render_template("show.html", user_name = session["user"]) 
+    # where is ABOVE user_name hooked up?
 
 
 # /////////////////////////////////////////////////
@@ -88,11 +89,6 @@ def reset_session():
     #           2a TRK: <a> tag on line 25, 73-b_session_counter show.html
             # 73 3:41 this is like logging someone out
 
-# COPIED =====> below code pasted from:  flask-flask-fundamentals-counter
-# session.clear()		# clears all keys
-# session.pop('key_name')		# clears a specific key
-# COPIED =====> above code pasted from:  flask-flask-fundamentals-counter
-#
 #  Me: Next two routes are mine
 # /////////////////////////////////////////////////
 # Nero and Agrippina
