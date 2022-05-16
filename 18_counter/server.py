@@ -63,7 +63,7 @@ def add_2():
     return redirect("/") 
 
 
-# @app.route('users')  
+# @app.route('/users')  
 # def process_user():
 #     print("user")
 #     return redirect("/")
@@ -124,10 +124,34 @@ def last_words_of_nero():
 def last_words_of_agrippina():
     return 'Smite me here, where the monster was nurtured!'
 
+
+# /////////////////////////////////////////////////
+# LP Solutions
+# /////////////////////////////////////////////////
+
+# @app.route('/')
+# def index():
+#     if "count" not in session:
+#         session["count"] = 0
+#     else:
+#         session["count"] += 1
+
+#     return render_template("z04_index.html") 
+
+# @app.route('/resetsesh')
+# def reset_route():
+#     print("went through '/resetsesh'")
+#     session.clear()
+#     return redirect("/") #==> to line 14 server.py?
+
 # /////////////////////////////////////////////////
 # What is the below code?
 # /////////////////////////////////////////////////
 
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
+# It's weird there is a solution for this one
