@@ -1,0 +1,76 @@
+ <!-- I AM 19_great_number_game index.html -->
+
+ <!-- Referencing KW Python April 2022 Great Number Game-->
+        <!-- referenced as 19 x:xx -->
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Great Number Game</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        </head>
+        <body>
+            <div class="container">
+        
+                <!-- created at 19 12:43, 19 15:11, 
+                    we are using code below as a display tool ME(a lot later): for session
+                    THIS IS THE INFO IN THE SESSION BOX! 
+                    will delete it later-->
+                <p>Computer's Guess:  {{ session["comp_guess"] }}</p>
+        
+                <!-- created 19 6:01 // probably don't need to mark this-->
+                <h1>The Great Number Game!</h1>
+                <h3>I'm thinking of a number between 1 - 100</h3>
+                <h3>No fractions.</h3>
+        
+                <h3>You have made <span class="text-info">{{ count }}</span> guesses</h3>
+                <!-- CODE ABOVE, why the span?  Does it matter? No.  Was for the bootstrap in the demo -->
+                <!-- 19 8:06 -->
+                <!-- for the outer shell of our form, 
+                      three components [term -elements?] to every form:
+                      1. action, tells us where we're going
+                      2.  method = post, tells us we're submiting info
+                      3.  input type submit, that's the button triggers form to go back to backend 19-->
+                
+                <!-- form below sends to  TRK=> server.py line 92->
+                <!-- Are "action", "method", "type" "name" and "value" yellow because they are attributes (which are a type of keywords)-->
+                <!-- action is the address/url -->
+                <!--  method in the form, methods in the route on server.py-->
+                <!-- "post" is sending new information back -->
+                <!-- name is the label, different than the html tag called 'label'!  -->
+                    <!-- name is how the server.py will locate the information at a given input -->
+                    <!-- example:  if name = "email", server.py request.form["email"] -->
+                    <!-- the package is the request.form and the indiviual data found based the 'name' attribute-->
+                <!-- Are there consise definitions of ABOVE terms? -->
+                <!-- jinja added at 19 52:03, TRK => server.py lines 74-77 -->
+                {% if loser ==False %}
+                <form action="/process_guess" method="post"> 
+                                    <!-- above This will send 'post' data to TRK=> server.py line 92 
+                                    Will be caught on TRK=> server.py line 92-->
+                    <!-- 19 10:35 Me: Pay attention to where these hook up -->
+                    <!-- Also, define "label", why is it not being used? -->
+                    <input type="number" name="user_guess">
+                    <!-- Whatever is written in [value=] will be the "text in the browser"-->
+                    <input type="submit" value="Take a Guess!">
+                </form>
+                {% else %}
+        
+                <h3>Wha wha whaaaaa</h3>
+        
+                {% endif %}
+        
+                <a href="/reset">A-tag Reset Button!</a>
+                <!-- CODE # BELOW added at 19 32:53.  Where will it hook up? -->
+                <!-- TRK=>  server.py 153- 160-->
+                        <!-- then REDIRECTED back up to TRK=> server.py line 34 -->
+                <h4>{{ message }}</h4>
+        <!--Ha!  19 35:22 I didn't get the error message!  -->
+        <!-- OKAY.  So what was KW trying to highlight? -->
+            <!-- What did I accidently get right? -->
+            </div>
+        </body>
+        </html>
