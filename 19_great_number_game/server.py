@@ -14,8 +14,11 @@
 
 # ALSO, I did not text on the job at work.  But on my mac I get
 # every irrelevant update etc.  I need to turn that off.  How?
-
+            # I get three notification across three devices
 from flask import Flask, render_template, redirect, session, request
+
+# HEY!  ERROR: Terminal displayed a no flask error
+        # This is because I was not in pipenv shell
 app = Flask(__name__)
 
 app.secret_key = "marcusaureliusthebestrevengeisnotobelikethat"
@@ -35,6 +38,9 @@ def index():
             # RbrDk
             # Me:  besides the browser, is there another way 
             # to display session information? 
+    
+  
+
     if "comp_guess" not in session:
 
         # [what term is session?]
@@ -46,15 +52,25 @@ def index():
         # In Q&A 19 18:43 "session box" metaphor
                 # can I RbrDk someone through it?
 
-        # CODE BELOW 19 30:33 creating another session variable 
-        session["message"] = "You better not get it wrong!  Mwahahahaa!"
+        # CODE BELOW 19 30:33 creating another session variable -- 19 31:15 this will change
+        session["message"] = "If you get it wrong, you owe me $1"
 # HEY!  ABOVE is where I stopped!  19 30:00  <----remember to do this, leave first one in as a reminder
         # ALSO, KW video helped me realize that [session]/[terminal]/{both?} 
         # is temporary.  Earlier, this made me chase ghost problems
             # Clarify what is going on in comments two above.  Which is it?     
-    return render_template('index.html')
 
+        # 19 40:32.  Making a COUNTER!
+        # CODE BELOW SUGGESTED BY NICK.  Why did KW not need it
+    if "count" not in session:
 
+        session["count"] = 0 # => 19_great_number_game index.html line 30
+
+    # 19 32:45 TOGGLE OFF
+    # return render_template('index.html')
+    # return render_template('index.html', message = session["message"])
+    # 19 42:28  TOGGLE AGAIN
+    return render_template('index.html', message = session["message"], count = session["count"])
+# 19 32:45 SET UP FOR ERROR.  Will need to change things
 
 # CATCHing POST from form on line 41 index.html
 @app.route('/process_guess', methods=["POST"])
@@ -65,12 +81,16 @@ def processing():   # Is there a NMCV for process_guess and processing--should t
     print(request.form["user_guess"]) #diagnostic
     # Saw KW do print ""======"" this weekend.  Very good tip
 
+    # CODE BELOW 41:44 adding count to our session.  TRK lines 61 - 63
+    session ["count"] += 1 
+
     # CODE 4 BELOW: 19 29:26 Used to redirect an empty string
              # 19 23:09 If you submit an empty guess, we will get an error
                     # we get an error here becasue there is no integer
                     # equivalent to an empty string, IOW "" != 0
     if len((request.form["user_guess"])) < 1:
         print("C'mon!  Make a guess!")
+        session["message"] = "Ah C'mon!  Just guess already!" # added 19 31:35
         return redirect("/")
             # ABOVE I'm guessing we can redirect to any page we want, right?
 
@@ -87,13 +107,16 @@ def processing():   # Is there a NMCV for process_guess and processing--should t
     print(comp_guess)
     # 19 22:50 Comparing our Computer Number with User Guess
     if user_guess < comp_guess:
-        print("================================You low balled it.")
+        print("================================You low balled it!")
+        session["message"] = "Haha!  You low balled it!" # added 19 31:35
     elif user_guess > comp_guess:
-        print("================================Nope!  Too high!")  
-
+        print("================================Nope!  Too high!")
+        session["message"] = "Haha!  Nope! Too high!" # added 19 31:35
     else: # 19 25:07 HEY!  Print needs to be on lower line!
-        print("================================Nailed it!") 
-    
+        session["message"] = "Awesome!  Nailed it!" # added 19 31:35 
+        print("================================Nailed it!")
+        # CODE ABOVE session and print are flipped at 19 32:22  Does that matter?
+
     # HEY!  I spent almost 15 mintutes trying to get above 7 lines to print
             # in the terminal.  I tried deleting "print" 
             # back to the : on above line.  It worked!  No idea why.
@@ -104,9 +127,28 @@ def processing():   # Is there a NMCV for process_guess and processing--should t
 
     # 19 23:09 If you submit an empty guess, we will get an error
 
+# CODE BELOW 19 36:45 to fix the error message I never got in the first place.
+    # What is it supposed to do?
+    # OKAY I didn't get that error message, but code below
+            # does not clear session.  What happened? 
+# Fixed ME: 1:17!  Need to manually reset localhost:5000/reset
+
+@app.route("/reset")
+def reset_session():
+    session.clear()
+    # CODE 3 BELOW  How is this different than 
+    # render_template index.html on line 58
+    #       Is it more flexible?  Why?  
+    return redirect("/")
 
 if __name__=="__main__":
     app.run(debug=True)
 
+# 19 39:44, skipping CSS
+# 19 39:50, let know users how many times they have guessed 
+        # MAKE A COUNTER!
+
+# I like working with python because of the diagnostics in terminal
+# And because comments are easier/more fluid
 
 #
