@@ -17,11 +17,12 @@
     <div class="container">
 
         <!-- created at 19 12:43, 19 15:11, 
-            we are using code below as a display tool
+            we are using code below as a display tool ME(a lot later): for session
+            THIS IS THE INFO IN THE SESSION BOX! 
             will delete it later-->
         <p>Computer's Guess:  {{ session["comp_guess"] }}</p>
 
-        <!-- created 19 6:01 -->
+        <!-- created 19 6:01 // probably don't need to mark this-->
         <h1>The Great Number Game!</h1>
         <h3>I'm thinking of a number between 1 - 100</h3>
         <h3>No fractions.</h3>
@@ -33,16 +34,16 @@
               2.  method = post, tells us we're submiting info
               3.  input type submit, that's the button triggers form to go back to backend 19-->
         
-        <!-- form below sends to line 38 server.py -->
+        <!-- form below sends to line 44 server.py -->
         <!-- Are "action", "method", "type" "name" and "value" yellow because they are keywords-->
         <!-- Are there consise definitions of ABOVE terms? -->
         <form action="/process_guess" method="post"> 
-                            <!-- above being sent as 'post' data
-                            Will be caught on line 38 19_great_number_game server.py-->
+                            <!-- above This will send 'post' data to line 44 server.py
+                            Will be caught on line 44 19_great_number_game server.py-->
             <!-- 19 10:35 Me: Pay attention to where these hook up -->
             <!-- Also, define "label", why is it not being used? -->
             <input type="number" name="user_guess">
-            <!-- [value=]="the text in the browser"-->
+            <!-- Whatever is written in [value=] will be the "text in the browser"-->
             <input type="submit" value="Take a Guess!">
         </form>
 
