@@ -13,7 +13,11 @@
 # All I can control is the time I put in
     # Napoleon:  Space I can recover.  Time, never
     # Trade Space for Time
+    # Don't Race Against Time
+    # Use Time To Learn
 
+# ALSO I can control my strategies
+#
 # Keep designing and evaluating mnmeonic strategies
 
 # Below Code:  not sure what this is telling me
@@ -42,18 +46,75 @@ def index():
     return render_template('index.html') 
 
 
-# STOP HEY!  -I was about to Copy Below Code.  One route per form
+# HEY!  This DOES Work!
+# CATCHing POST from form TRK=> index.html line 29
+@app.route('/answer_the_questions', methods=["POST"])
+def what_is_your_name():   
+    print("======================================FIRST NAME") #Code Below Not running.  What was the problem?  Did I not save?
+    print(request.form["first_name"]) #diagnostic
+    # Saw KW do print ""======"" this weekend.  Very good tip
 
-# CATCHing POST from form index.html
-@app.route('/process_guess', methods=["POST"])
-def processing():   
-    # print("======================================Hey!") #Code Below Not running.  What was the problem?  Did I not save?
-    print(request.form["user_guess"]) #diagnostic
+
+    # Never render on a post
+    # return redirect("/")
+
+
+# STOP HEY!   Getting the Below @app.routes
+        # to print in terminal
+
+
+# HEY!  This DOES NOT Work!
+# CATCHing POST from form TRK=> index.html line 29
+@app.route('/answer_the_questions', methods=["POST"])
+def where_are_you_from():   
+
+    # Code Below is not printing in terminal
+    # Code 4 Below is request.form catching 
+    # a different kind of data because 
+    # it's a select button?
+    print("======================================CITY!") #not printing either
+    print(request.form["city"]) #diagnostic
+    # Saw KW do print ""======"" this weekend.  Very good tip
+
+
+    # Never render on a post
+    # return redirect("/")
+
+# HEY!  This DOES NOT Work!
+# CATCHing POST from form TRK=> index.html line 29
+@app.route('/answer_the_questions', methods=["POST"])
+def i_speak_the_kings_english():   
+
+    # Code Below is not printing in terminal
+    # Code 4 Below is request.form catching 
+    # a different kind of data because 
+    # it's a select button?
+    print("======================================LANGUAGE!") #not printing
+    print(request.form["language"]) #diagnostic
+    # Saw KW do print ""======"" this weekend.  Very good tip
+
+
+    # Never render on a post
+    # return redirect("/")
+
+
+# HEY!  This DOES NOT Work!
+
+# This is surprising  I expected Below Code work similarly to
+# TRK=> server.py line 51
+
+@app.route('/answer_the_questions', methods=["POST"])
+def dont_be_shy():   
+    print("======================================COMMENT") #not printing
+    print(request.form["comment"]) #diagnostic
     # Saw KW do print ""======"" this weekend.  Very good tip
 
 
     # Never render on a post
     return redirect("/")
+
+
+
 
 # keeping this in.  I think I'll need it for the home link
 # to reset on the show.html
@@ -62,5 +123,13 @@ def reset_session():
     session.clear()
     return redirect("/")
 
+# what's going on in the code below?
+# if is just a conditional
+#  __name__ same as above --what is that doing again?
+# == is just an operator
+# "__main__"
+# app. same as @app. --what is that doing again?
+# run
+# (degug=True)  #True is just a boolean
 if __name__=="__main__":
     app.run(debug=True)

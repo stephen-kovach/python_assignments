@@ -1,5 +1,13 @@
 <!-- I AM 20_dojo_survey index.html -->
 
+<!-- Editing Tools -->
+
+<!-- HEY!  Note -->
+<!-- STOP HEY! reminds me where I was and what was doing before I stop-->
+<!-- TRK=> name.file line xx    this is a spot in the code that connects to another spot -->
+                                <!-- how to make this directional?  11:03pm -->
+<!-- The two KW showed  -->
+
 <!-- HEY! Post to GitHub Every Hour -->
 <!-- Last update at x:xx [maybe only track time on server.py] -->
 
@@ -10,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo Survey</title>
+<!-- link css later--do check question TRK=> index.html line 22 -->
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -17,58 +26,61 @@
         <h1>Dojo Survey</h1>
         <!-- These are the forms I'm using -->
         <!-- form, text, select, select, textarea, submit -->
-        <form action="/process" method="post">
-        <!--Hey! TOGGLE Code Below--I need to review display: flex 
+        <form action="/answer_the_questions" method="post">
+<!--Hey! TOGGLE Code Below--I need to review display: flex 
                 RCRSV so the problem I was trying to solve with display flex 
-                fixed itself once I added the p-tags
+                fixed itself once I added the p-tags--because of block and in-line block properties?
                 Still need to review inline, block inline block and flex-->
-                <!-- DEFINE Each from the LP, then have TA translate hahaha
+                <!-- DEFINE Each from the LP, then have TA translate--LATER hahaha
                 1
                 2
                 3
                 4        -->
                 <!-- Would Below Code work? -->
                 <!-- <form action="/process" method="post" class="container_augustus"> -->
-                <!-- [MNM imprinting images and associating sequential] -->
+                <!-- [MNM imprinting images and associating sequential order] -->
+            <!-- TRY IT-->
+                        <!-- abstract_DYN_emporer_01deed-->
+                        <!-- MNM with concete images alongside abtractions-->
         <!-- <div>
                 <label>Name: </label>
                 <input type="text" name="name" 
                 placeholder="Your name..." >
             </div>-->
         <!--  -->
-        <p>Name:</p>
-        <input type="text" name="first_name">
+            <p>Name:</p>
+            <input type="text" name="first_name">
         <!-- Select:  should there be a default value? -->
         <!-- --Select a Location-- -->
-        <p>Dojo Location</p>
+            <p>Dojo Location</p>
 
 
-<!-- STOP HEY! reformating lines below-->
+            <select name="city">
+                <option>Chicago</option>
+                <option>Kings Landing</option>
+                <option>Bespin</option>
+                <option>Toledo</option>
+            </select>
 
-
-<select name="snack">
-    <option>Chicago</option>
-    <option>Kings Landing</option>
-    <option>Bespin</option>
-    <option>Toledo</option>
-</select>
-
-<p>Dojo Location</p>
-<select name="snack">
+            <p>Dojo Location</p>
+            <select name="language">
     <!-- Select:  should there be a default value? -->
     <!-- ==Select a Language-- -->
-    <option>Python</option>
-    <option>French</option>
-    <option>'Merican</option>
-    <option>Pig Latin</option>
-</select>
+                <option>Python</option>
+                <option>French</option>
+                <option>'Merican</option>
+                <option>Pig Latin</option>
+            </select>
 
-<p>If you have spirit animal, what is it?</p>
-<p>If not, why not?</p>
-<textarea name="comment" cols="20" rows="3"></textarea>
+            <p>If you have spirit animal, what is it?</p>
+            <p>If not, why not?</p>
+            <textarea name="comment" cols="20" rows="3"></textarea>
 
-<input type="submit" value="Render Me Templates!" >
-    </form>
+            <!-- 7:43        7:51 fixed it.  copied over wrong--> 
+            <!-- Code Below button below is not sending info -->
+            <!-- to the route at TRK=> server.py line 92 -->
+            <input type="submit" value="Render Me Templates!" >
+        </form>
     
 
     <!-- container -->
@@ -83,3 +95,5 @@
 <!-- I just spent 2 mintues readjusting the spaces on the show.html -->
 <!-- The cmd D key went all the single spaces [including on the sides] -->
 <!--  There's a faster way to do that, right?-->
+
+<!-- Is it possible to push MySQL to github? -->
