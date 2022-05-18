@@ -1,7 +1,8 @@
 <!-- I AM 20_dojo_survey show.html -->
 
 <!-- HEY! Post to GitHub Every Hour -->
-<!-- Last update at x:xx [maybe only track time on server.py]-->
+<!-- Update time on server.py -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,26 @@
     
 
     <!-- container -->
+    </div>
+
+    <div>
+        <h3>Name Question</h3>
+        <!-- TOGGLE? these aren't working-->
+        <p>Name Answer 01 {{ request.form["first_name"] }}</p>
+        <p>Name Answer 02 {{ session["first_name"] }}</p>
+        <p>Name Answer 03 {{ first_name }}</p>
+        <p>Name Answer 04 {{ "first_name" }}</p>
+        <!-- How to hook up with TRK=> index.html line 52 -->
+        <h4>{{ first_name }}</h4>
+
+                <!-- This will probably look different for a 
+        select bar (can I say "select tag"?) -->
+        <h3>Location Question</h3>
+
+        <p>City Answer 01 {{ request.form["city"] }}</p>
+        <p>City Answer 02 {{ session["city"] }}</p>
+        <p>City Answer 03 {{ city }}</p>
+        <p>City Answer 04 {{ "city" }}</p>
     </div>
 </body>
 </html>

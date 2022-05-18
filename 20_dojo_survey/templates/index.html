@@ -4,12 +4,19 @@
 
 <!-- HEY!  Note -->
 <!-- STOP HEY! reminds me where I was and what was doing before I stop-->
-<!-- TRK=> name.file line xx    this is a spot in the code that connects to another spot -->
+<!-- TRK=> name.file, line xx    this is a spot in the code that connects to another spot -->
                                 <!-- how to make this directional?  11:03pm -->
-<!-- The two KW showed  -->
+<!-- RbrDk      this is where I try to articulate/revise
+                understaning of an observation or problem-->
+<!-- TOGGLE  this is where I comment out different version of code
+                to see if they work and how they work-->
+
+<!-- Hacks -->
+
+           <!-- The two KW showed  -->
 
 <!-- HEY! Post to GitHub Every Hour -->
-<!-- Last update at x:xx [maybe only track time on server.py] -->
+<!-- Update time on server.py -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +25,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo Survey</title>
-<!-- link css later--do check question TRK=> index.html line 22 -->
+<!-- link css later--do check question TRK=> index.html line 22 ?? -->
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -26,7 +33,8 @@
         <h1>Dojo Survey</h1>
         <!-- These are the forms I'm using -->
         <!-- form, text, select, select, textarea, submit -->
-        <form action="/answer_the_questions" method="post">
+        <form action="/answer_the_questions" method="post"> 
+            <!-- Code Above  TRK=> server.py, line 57 -->
 <!--Hey! TOGGLE Code Below--I need to review display: flex 
                 RCRSV so the problem I was trying to solve with display flex 
                 fixed itself once I added the p-tags--because of block and in-line block properties?
@@ -78,22 +86,64 @@
 
             <!-- 7:43        7:51 fixed it.  copied over wrong--> 
             <!-- Code Below button below is not sending info -->
-            <!-- to the route at TRK=> server.py line 92 -->
+            <!-- to the route at TRK=> server.py line 92 ?? -->
+<!--HEY! experimenting with connecting to other template  -->
+            <a href="/show/html">Probably Don't Need an a-tag</a>
             <input type="submit" value="Render Me Templates!" >
         </form>
     
-
     <!-- container -->
     </div>
+
+    <div>
+
+        <h3>Name Question</h3>
+        <!-- TOGGLE? these aren't working-->
+        <p>Name Answer 01 {{ request.form["first_name"] }}</p>
+        <p>Name Answer 02 {{ session["first_name"] }}</p>
+        <p>Name Answer 03 {{ first_name }}</p>
+        <p>Name Answer 04 {{ "first_name" }}</p>
+        <!-- How to hook up with TRK=> index.html line 66 -->
+        <h4>{{ first_name }}</h4>
+
+                <!-- This will probably look different for a 
+        select bar (can I say "select tag"?) -->
+        <h3>Location Question</h3>
+
+        <p>City Answer 01 {{ request.form["city"] }}</p>
+        <p>City Answer 02 {{ session["city"] }}</p>
+        <p>City Answer 03 {{ city }}</p>
+        <p>City Answer 04 {{ "city" }}</p>
+
+    </div>
+
 </body>
 </html>
 
+<!-- HEY!  Accidently copied Code Below under the </html> -->
+<!-- Why did it still print? -->
+        <!-- This will probably look different for a 
+        select bar (can I say "select tag"?) -->
+        <!-- should hook up to TRK=> index/html line 66 -->
+        <h3>Location Question</h3>
+
+        <p>City Answer 01 {{ request.form["city"] }}</p>
+        <p>City Answer 02 {{ session["city"] }}</p>
+        <p>City Answer 03 {{ city }}</p>
+        <p>City Answer 04 {{ "city" }}</p>
+
 <!-- ///////////////////////////////////// -->
-<!-- ////////////////////Ask TA -->
+<!-- ////////////////////Ask TA or Instrctor -->
 <!-- ///////////////////////////////////// -->
 
 <!-- I just spent 2 mintues readjusting the spaces on the show.html -->
 <!-- The cmd D key went all the single spaces [including on the sides] -->
 <!--  There's a faster way to do that, right?-->
 
+<!-- <==== What are the little red dots on the side -->
+
 <!-- Is it possible to push MySQL to github? -->
+
+<!--ALSO
+
+    Why does the sidecar mode for the iPad keep freezing?-->
