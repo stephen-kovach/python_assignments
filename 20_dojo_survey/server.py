@@ -1,7 +1,7 @@
 # I AM 20_dojo_survey server.py
 
 # HEY! Post to GitHub Every Hour -->
-# Last update at 10:36pm -->
+# Last update at 8:37am -->
 
 # JSTOR====FLower and Hayes, Cognitive Process Model 1981
 
@@ -46,66 +46,37 @@ def index():
     return render_template('index.html') 
 
 
-# HEY!  This DOES Work!
+# HEY!  9:38am The reason CITY, LANGUAGE and COMMENT wasn't working
+        # was becuase you created a differnt @app.route for each question
+        #only need one @app.route per form
+
 # CATCHing POST from form TRK=> index.html line 29
 @app.route('/answer_the_questions', methods=["POST"])
-def what_is_your_name():   
-    print("======================================FIRST NAME") #Code Below Not running.  What was the problem?  Did I not save?
+def and_i_will_read_them():   
+    print("======================================FIRST NAME!") #Code Below Not running.  What was the problem?  Did I not save?
     print(request.form["first_name"]) #diagnostic
     # Saw KW do print ""======"" this weekend.  Very good tip
 
 
-    # Never render on a post
-    # return redirect("/")
-
-
-# STOP HEY!   Getting the Below @app.routes
-        # to print in terminal
-
-
-# HEY!  This DOES NOT Work!
+# HEY!  Below comment was why it was not working
+# This is surprising  I expected Below Code work similarly to
+# TRK=> server.py line 54 ---9:38am that's because you had
+                    # an @app.route for each question
+                    # should be one @app.route per form
 # CATCHing POST from form TRK=> index.html line 29
-@app.route('/answer_the_questions', methods=["POST"])
-def where_are_you_from():   
-
-    # Code Below is not printing in terminal
-    # Code 4 Below is request.form catching 
-    # a different kind of data because 
-    # it's a select button?
     print("======================================CITY!") #not printing either
     print(request.form["city"]) #diagnostic
     # Saw KW do print ""======"" this weekend.  Very good tip
 
 
-    # Never render on a post
-    # return redirect("/")
 
-# HEY!  This DOES NOT Work!
 # CATCHing POST from form TRK=> index.html line 29
-@app.route('/answer_the_questions', methods=["POST"])
-def i_speak_the_kings_english():   
-
-    # Code Below is not printing in terminal
-    # Code 4 Below is request.form catching 
-    # a different kind of data because 
-    # it's a select button?
     print("======================================LANGUAGE!") #not printing
     print(request.form["language"]) #diagnostic
     # Saw KW do print ""======"" this weekend.  Very good tip
 
-
-    # Never render on a post
-    # return redirect("/")
-
-
-# HEY!  This DOES NOT Work!
-
-# This is surprising  I expected Below Code work similarly to
-# TRK=> server.py line 51
-
-@app.route('/answer_the_questions', methods=["POST"])
-def dont_be_shy():   
-    print("======================================COMMENT") #not printing
+ 
+    print("======================================COMMENT!") #not printing
     print(request.form["comment"]) #diagnostic
     # Saw KW do print ""======"" this weekend.  Very good tip
 
