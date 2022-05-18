@@ -20,35 +20,57 @@
              where would I hook up from server.py -->
         <!-- I don't think I'll need jinja -->
 
-    <h1>Dojo Survey</h1>
+        <h1>Dojo Survey</h1>
     
     <!-- <form action="/process" method="post"> -->
-        <p>Name:</p>
+        <p>Name:   {{ session["first_name"] }}</p>
 
-        <p>Dojo Location</p>
+        <p>Dojo Location:  {{ session["city"] }}</p>
 
-        <p>Dojo Language</p>
+        <p>Dojo Language:  {{ session["language"] }}</p>
 
-        <p>Interesting answer...</p>
+        <p>You said,  "{{session["comment"]}}?"</p>
+
+        <p>That's an interesting answer...</p>
         <p>Mine's a cockatoo!</p>
 
-
-    <input type="submit" value="Get Back Jo Jo!" >
+        <!-- Below Code should redirect to index.html and clear session  TRK=> not yet-->
+        <input type="submit" value="Get Back Jo Jo!" >
+    
     <!-- </form> -->
     
 
     <!-- container -->
     </div>
 
+<!-- QUESTION: -->
+    <!-- I want to move Below Code down on my browser -->
+    <!-- But I don't want to play with CSS right now -->
+    <!-- I'm using P-Tags to do that BUT -->
+    <!-- I'm pretty sure there's a better way to do this -->
+
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>  
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+
     <div>
         <h3>Name Question</h3>
-        <!-- TOGGLE? these aren't working-->
+        <!-- Below Code DOES NOT work-->
         <p>Name Answer 01 {{ request.form["first_name"] }}</p>
+        <!-- Below Code DOES work-->        
         <p>Name Answer 02 {{ session["first_name"] }}</p>
+<!--HEY!   Below Code DOES work, but not on index.html  Why not?-->
         <p>Name Answer 03 {{ first_name }}</p>
+        <!-- Below Code DOES NOT work, print string-->
         <p>Name Answer 04 {{ "first_name" }}</p>
         <!-- How to hook up with TRK=> index.html line 52 -->
         <h4>{{ first_name }}</h4>
+<!-- QUESTION:  Why does H4 not print? -->
 
                 <!-- This will probably look different for a 
         select bar (can I say "select tag"?) -->
@@ -58,6 +80,31 @@
         <p>City Answer 02 {{ session["city"] }}</p>
         <p>City Answer 03 {{ city }}</p>
         <p>City Answer 04 {{ "city" }}</p>
+
+        <h3>Language Question</h3>
+        <!-- TOGGLE? these aren't working-->
+        <!-- Below Code DOES NOT work -->
+        <p>Name Answer 01 {{ request.form["language"] }}</p> 
+        <!-- Below 2 Code DOES work -->
+        <p>Name Answer 02 {{ session["language"] }}</p> 
+
+        <p>Name Answer 03 {{ language }}</p>
+        <!-- below caode DOES NOT work, prints string -->
+        <p>Name Answer 04 {{ "language" }} </p>
+        <!-- How to hook up with TRK=> index.html line 66 -->
+        <h4>{{ language }}</h4>
+
+                <!-- This will probably look different for a 
+        select bar (can I say "select tag"?) -->
+        <h3>Comment Question</h3>
+
+        <p>Comment Answer 01 {{ request.form["comment"] }}</p>
+        <p>Comment Answer 02 {{ session["comment"] }}</p>
+        <p>Comment Answer 03 {{ comment }}</p>
+        <p>Comment Answer 04 {{ "comment" }}</p>
+        <h4>{{ comment }}</h4>
+
+
     </div>
 </body>
 </html>

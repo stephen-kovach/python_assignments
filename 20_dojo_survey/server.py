@@ -48,9 +48,13 @@ def index():
 
     # TOGGLE
     # Below Code DOES Work
-    return render_template('index.html') 
+    # return render_template('index.html') 
     # Below Code crafted from 19_great_number_game server.py line 84. DOES NOT work
-    # return render_template('index.html', first_name = session["first_name"]) 
+    return render_template('index.html') 
+    
+    # ALSO Will I need to incorporate Code Below into CODE 4 ABOVE
+                    # No.  This rendering can be done on TRK=> server.py line 117
+    # return render_template('show.html') 
 
 
 # HEY!  9:38am The reason CITY, LANGUAGE and COMMENT wasn't working
@@ -60,9 +64,17 @@ def index():
 # CATCHing POST from form TRK=> index.html line 36
 @app.route('/answer_the_questions', methods=["POST"])
 def and_i_will_read_them():   
-    print("======================================FIRST NAME!") #Code Below Not running.  What was the problem?  Did I not save?
+    print("======================================FIRST NAME!")
     print(request.form["first_name"]) #diagnostic
-    # Saw KW do print ""======"" this weekend.  Very good tip
+
+# HEY!  "session of" means session[], "something of" something[]
+# HEY!  What does Below Code do?
+            # Does it assign request.form variable to session variable?        
+    session["first_name"] = request.form["first_name"]
+    session["city"] = request.form["city"]
+    session["language"] = request.form["language"]
+    session["comment"] = request.form["comment"]
+
 
             #HEY!  Below comment was why it was not working
                 # This is surprising  I expected Below Code work similarly to
@@ -71,26 +83,21 @@ def and_i_will_read_them():
 
     print("======================================CITY!") #not printing either
     print(request.form["city"]) #diagnostic
-    # Saw KW do print ""======"" this weekend.  Very good tip
-
-
 
     print("======================================LANGUAGE!") #not printing
     print(request.form["language"]) #diagnostic
-    # Saw KW do print ""======"" this weekend.  Very good tip
-
  
     print("======================================COMMENT!") #not printing
     print(request.form["comment"]) #diagnostic
-    # Saw KW do print ""======"" this weekend.  Very good tip
-
+ 
     # Never render on a post
-    return redirect("/")
+    return redirect("/questions_answered")
+    # I can redirect anywhere I want
+# QUESTION:  Terminology:  Code 2 Above [REDIRECTS?] to TRK=> server.py line 104
+                # which, in turn, [REDIRECTS] to second template at server.py line 115
 
     # so if we never render on a post, how would I send the data
     # from index.html to show.html.  
-    # Code Below is an attempt
-    # Do I even need to send it? --> plug in session first
 
 # |||||
 # QUESTION:  Below Code:  I don't need a method because this is not a post, right?
@@ -101,20 +108,28 @@ def ill_read_them():
     # TOGGLE
     # return "I'll read them"
     print("===============================Question Answered")# diagnoistic
-    # return redirect("/")
-    return redirect("/agrippina")
-    # Above Code redirects appropriately
+    
+    # TOGGLE
+    # # return redirect("/agrippina") 
+    return render_template('show.html', first_name = session["first_name"]) 
+# QUESTION:  Code Above DOES work BUT works differently that I expected
+                # why do I only need to define one session on CODE 2 ABOVE
+                    # but I need to define 4 sessions [is "sessions" the appropriate term?]
+                    # on TRK=> server.py lines 73-76
+# HEY!  SESSION is DEFINED at TRK=> server.py lines 73 - 76
+    # # Above Code redirects to second template, show.html
 
+    # TOGGLE
+    # Below Code DOES NOT work
+    # return render_template('show.html', first_name = session["first_name"], city = session["city"]) 
+    # return render_template('show.html', first_name = session["first_name"], comment = session["comment"]) 
+    
+    
     # FIXED:  Recopied and edited nero code from 73_server.py
                 # I don't know what I did differntlly
     # QUESTION Above Code:  my terminal doesn't like either one.  Why not?
         #  Getting two different Error message
         #  How do I read errors in the terminal?
-    
-    
-#     print("======================================and I wlll read them") #Code Below Not running.  What was the problem?  Did I not save?
-# #     # print(request.form["first_name"]) #diagnostic
-# #     # Saw KW do print ""======"" this weekend.  Very good tip
 
 # #     # TOGGLE
 #     return redirect("/")
