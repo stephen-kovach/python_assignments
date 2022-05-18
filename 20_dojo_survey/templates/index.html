@@ -1,0 +1,73 @@
+ <!-- I AM 20_dojo_survey index.html -->
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dojo Survey</title>
+            <link rel="stylesheet" href="/static/style.css">
+        </head>
+        <body>
+            <div>
+            <h1>Dojo Survey</h1>
+            <!-- These are the forms I'm using -->
+            <!-- form, text, select, select, textarea, submit -->
+            <form action="/process" method="post">
+        <!--Hey! TOGGLE Code Below--I need to review display: flex 
+        RCRSV so the problem I was trying to solve with display flex 
+                fixed itself once I added the p-tags
+                Still need to review inline, block inline block and flex-->
+                <!-- Would Below Code work? -->
+            <!-- <form action="/process" method="post" class="container_augustus"> -->
+            <!-- [MNM imprinting images and associating sequential] -->
+                <!-- <div>
+                    <label>Name: </label>
+                    <input type="text" name="name" 
+                    placeholder="Your name..." >
+                </div>-->
+                <!--  -->
+                <p>Name:</p>
+                <input type="text" name="first_name">
+                    <!-- Select:  should there be a default value? -->
+                    <!-- --Select a Location-- -->
+                <p>Dojo Location</p>
+                <select name="snack">
+                    <option>Chicago</option>
+                    <option>Kings Landing</option>
+                    <option>Bespin</option>
+                    <option>Toledo</option>
+                </select>
+
+                <p>Dojo Location</p>
+                <select name="snack">
+                    <!-- Select:  should there be a default value? -->
+                    <!-- ==Select a Language-- -->
+                    <option>Python</option>
+                    <option>French</option>
+                    <option>'Merican</option>
+                    <option>Pig Latin</option>
+                </select>
+
+                <p>If you have spirit animal, what is it?</p>
+                <p>If not, why not?</p>
+                <textarea name="comment" cols="20" rows="3"></textarea>
+
+                <input type="submit" value="Render Me Templates!" >
+            </form>
+            
+
+            <!-- container -->
+            </div>
+        </body>
+        </html>
+
+<!-- ///////////////////////////////////// -->
+<!-- ////////////////////Ask TA -->
+<!-- ///////////////////////////////////// -->
+
+<!-- I just spent 2 mintues readjusting the spaces on the show.html -->
+<!-- The cmd D key went all the single spaces [including on the sides] -->
+<!--  There's a faster way to do that, right?-->
