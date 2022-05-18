@@ -18,11 +18,15 @@
 
         <!-- how would I render this template?
              where would I hook up from server.py -->
+                    <!-- show.html TEMPLATE IS BEING RENDERED -->
+                        <!-- at server.py line 117, right? -->
         <!-- I don't think I'll need jinja -->
+                    <!-- NO JINJA because we are not displaying text
+                        on the same template based on a conditional-->
 
         <h1>Dojo Survey</h1>
     
-    <!-- <form action="/process" method="post"> -->
+
         <p>Name:   {{ session["first_name"] }}</p>
 
         <p>Dojo Location:  {{ session["city"] }}</p>
@@ -34,7 +38,13 @@
         <p>That's an interesting answer...</p>
         <p>Mine's a cockatoo!</p>
 
-        <!-- Below Code should redirect to index.html and clear session  TRK=> not yet-->
+
+        <!-- TOGGLE -->
+<!-- QUESTION:  Why does route on show.html line 45 clear the session data?-->
+        <a href="/reset">Get Back Jo Jo /reset</a>
+        <a href="/">Get Back Jo Jo / </a>
+        <!-- My first plan was to make Code Below [REDIRECT?] back to index.html-->
+        <!-- Should I make the button below redirect?  Or is that not a thing... -->
         <input type="submit" value="Get Back Jo Jo!" >
     
     <!-- </form> -->
