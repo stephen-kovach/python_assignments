@@ -4,6 +4,7 @@
 # Last update at 5:20pm -->
 
 # JSTOR====FLower and Hayes, Cognitive Process Model 1981
+# I am spending time editing and fine tuning my comments for later clarity
 
 # The diachotomy of control.
     # Like restaurant work--you can only move so fast
@@ -19,8 +20,11 @@
 # ALSO I can control my strategies
 
         # Writing this out is helping me stay focused
-        # it's liking revising a RbrDK that gets saved
-#
+        # it's liking revising a Rubber Duck that constantly evolves
+                # and is easy to save
+        # And it might evolve into a good guide for me
+
+# 
 # Keep designing and evaluating mnmeonic strategies
 
 # Below Code:  not sure what this is telling me
@@ -52,16 +56,11 @@ def index():
     # Code Below DOES NOT work.  It's in the wrong place, needs to be on server.py line 117 
     # return render_template('show.html', first_name = session["first_name"]) 
     
-    # ALSO Will I need to incorporate Code Below into CODE 4 ABOVE
-                    # No.  This rendering can be done on server.py line 117
-
-
-
 # HEY!  9:38am The reason CITY, LANGUAGE and COMMENT wasn't working
         # was becuase you created a differnt @app.route for each question
         #only need one @app.route per form
 
-# CATCHing POST from form TRK=> index.html line 37
+# CATCHing POST from form FLOW<= index.html line 46
 @app.route('/answer_the_questions', methods=["POST"])
 def and_i_will_read_them():   
     print("======================================FIRST NAME!")
@@ -75,30 +74,29 @@ def and_i_will_read_them():
 # QUESTION:  What does Below Code do?
             # Does it assign request.form variable to session variable?        
     session["first_name_doesnotneedtomatch"] = request.form["first_name"]
-    session["city"] = request.form["city"]  #TRK=>  flow from index.html, like cause and effect
+    session["city"] = request.form["city"]  #"RM FLOW=>  flow from index.html, like cause and effect"
     session["language"] = request.form["language"]
     session["comment"] = request.form["comment"]
 
 
-            #HEY!  Below comment was why it was not working
-                # This is surprising  I expected Below Code work similarly to
+            #HEY!  Below comment was why it was not working.  This is surprising  I expected Below Code work similarly to
             # 9:38am that's because you had an @app.route for each question
                 # should be one @app.route per form
 
-    print("======================================CITY!") #not printing either
+    print("======================================CITY!") #diagnostic
     print(request.form["city"]) #diagnostic
 
-    print("======================================LANGUAGE!") #not printing
+    print("======================================LANGUAGE!") #diagnostic
     print(request.form["language"]) #diagnostic
  
-    print("======================================COMMENT!") #not printing
+    print("======================================COMMENT!") #diagnostic
     print(request.form["comment"]) #diagnostic
  
     # Never render on a post
     return redirect("/questions_answered")
     # I can redirect anywhere I want
 # QUESTION:  Terminology:  Code 2 Above [REDIRECTS?] to server.py line 109
-                # which, in turn, [REDIRECTS] to second template at server.py line 117
+                # which, in turn, [REDIRECTS] to second template at server.py line 115
 
     # so if we never render on a post, how would I send the data
     # from index.html to show.html.  
@@ -114,13 +112,13 @@ def ill_read_them():
     print("===============================Question Answered")# diagnoistic
     
     # TOGGLE
-    # # return redirect("/agrippina")   first_name parameter  session key["first_name"]
+    # # return redirect("/agrippina")   # RM: first_name parameter  session key["first_name"]  -RbrDK  I don't know why parameter first_name important?  Where else is it in the code?
     return render_template('show.html', first_name = session["first_name"]) 
 # QUESTION:  Code Above DOES work BUT works differently that I expected
                 # why do I only need to define one session on CODE 2 ABOVE
                     # but I need to define 4 sessions [is "sessions" the appropriate term?]
-                    # on TRK=> server.py lines 76 - 79
-# HEY!  SESSION is DEFINED at TRK=> server.py lines 76 -79
+                    # on server.py lines 75 - 78
+# HEY!  SESSION is DEFINED at HERE server.py lines 75 -78
     # # Above Code redirects to second template, show.html
 
     # TOGGLE
@@ -155,8 +153,11 @@ def last_words_of_agrippina():
 
 
 # keeping Code Below.  I think I'll need it for the home link
-# to reset on the show.html
-@app.route("/reset") # TRK => show.py line 44
+    # NO.  It wasn't necessary  
+# RbrDk RM: the information on show.html is in "the session"
+# that was established by line 
+
+@app.route("/reset") # FLOW<= show.py line 44
 def reset_session():
     session.clear()
     return redirect("/")

@@ -1,11 +1,18 @@
 <!-- I AM 20_dojo_survey index.html -->
 
-<!-- Editing Tools -->
+<!-- Copy Edit Tools -->
 
 <!-- HEY!  Note -->
 <!-- STOP HEY! reminds me where I was and what was doing before I stop-->
-<!-- TRK=> name.file, line xx    this is a spot in the code that connects to another spot -->
-                                <!-- how to make this directional?  11:03pm -->
+<!-- FLOW=> name.file, line xx      dataflow from html to py
+    
+       this is a spot in the code that connects to another spot -->
+                                <!-- how to make this directional?  11:03pm 5/17 -->
+                                <!-- 5:29pm 5/18  changed TRK=> to FLOW=>-->
+
+<!-- <= FLOW name.file, line xx      dataflow to py from html-->
+<!-- HERE referencing data on same file -->
+
 <!-- RbrDk      this is where I try to articulate/revise
                 understaning of an observation or problem-->
 <!-- TOGGLE  this is where I comment out different version of code
@@ -14,10 +21,13 @@
 
 <!-- Hacks -->
 
-        <!-- The two KW showed  -->
+        <!-- The two KW showed + budget a few ### so don't move lines around to much  -->
 
 <!-- HEY! Post to GitHub Every Hour -->
 <!-- Update time on server.py -->
+
+<!-- HEY!  Try adding comments on fewer lines (sometimes)
+            --and ctl z for legibility-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +36,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo Survey</title>
-<!-- link css later--do check question TRK=> index.html line 22 ?? -->
+<!-- link css later--do check question FLOW=> index.html line 22 ?? -->
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -35,7 +45,7 @@
         <!-- These are the forms I'm using -->
         <!-- form, text, select, select, textarea, submit -->
         <form action="/answer_the_questions" method="post"> 
-            <!-- Code Above  TRK=> server.py, line 57 -->
+            <!-- Code Above <=FLOW server.py, line 57 -->
 <!--Hey! TOGGLE Code Below--I need to review display: flex 
                 RCRSV so the problem I was trying to solve with display flex 
                 fixed itself once I added the p-tags--because of block and in-line block properties?
@@ -51,11 +61,11 @@
             <!-- TRY IT-->
                         <!-- abstract_DYN_emporer_01deed-->
                         <!-- MNM with concete images alongside abtractions-->
-        <!-- <div>
-                <label>Name: </label>
-                <input type="text" name="name" 
-                placeholder="Your name..." >
-            </div>-->
+
+                        
+
+
+
         <!--  -->
             <p>Name:</p>
             <input type="text" name="first_name">
@@ -87,7 +97,7 @@
 
             <!-- 7:43        7:51 fixed it.  copied over wrong--> 
             <!-- Code Below button below is not sending info -->
-            <!-- to the route at TRK=> server.py line 92 ?? -->
+            <!-- to the route at <=FLOW server.py line 92 ?? -->
 <!--HEY! Can I say this?:  Code Below REDIRECTS to show.html AND "show.html" is a template, right?-->
             <a href="/questions_answered">Probably Don't Need an a-tag</a>
             <input type="submit" value="Render Me Templates!" >
@@ -120,7 +130,7 @@
         <p>Name Answer 03 {{ first_name }}</p>
         <!-- below caode DOES NOT work, prints string -->
         <p>Name Answer 04 {{ "first_name" }} </p>
-        <!-- How to hook up with TRK=> index.html line 66 -->
+        <!-- How to hook up with FLOW=> index.html line 66 -->
         <h4>{{ first_name }}</h4>
 
                 <!-- This will probably look different for a 
@@ -143,7 +153,7 @@
         <p>Name Answer 03 {{ language }}</p>
         <!-- below caode DOES NOT work, prints string -->
         <p>Name Answer 04 {{ "language" }} </p>
-        <!-- How to hook up with TRK=> index.html line 66 -->
+        <!-- How to hook up with FLOW=> index.html line 66 -->
         <h4>{{ language }}</h4>
 
                 <!-- This will probably look different for a 
@@ -166,7 +176,7 @@
 <!-- Why did it still print? -->
         <!-- This will probably look different for a 
         select bar (can I say "select tag"?) -->
-        <!-- should hook up to TRK=> index/html line 66 -->
+        <!-- should hook up to FLOW=> index/html line 66 -->
         <h3>Location Question</h3>
 
         <p>City Answer 01 {{ request.form["city"] }}</p>
