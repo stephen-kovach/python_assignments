@@ -111,41 +111,41 @@
 # Answer: 500, 500, 300, 500
 
 # #12
-# b = 500
-# print(b)
-# def foobar():
-#     b = 300
-#     print(b)
-#     return b
-# print(b)
-# foobar()
-# print(b)
+b = 500
+print(b)
+def foobar():
+    b = 300
+    print(b)
+    return b
+print(b)
+foobar()
+print(b)
 
 # Prediction: 500, 300, 300, 300
 # Answer: 500, 500, 300, 500
 
 # #13
-# b = 500
-# print(b)
-# def foobar():
-#     b = 300
-#     print(b)
-#     return b
-# print(b)
-# b=foobar()
-# print(b)
+b = 500
+print(b)
+def foobar():
+    b = 300
+    print(b)
+    return b
+print(b)
+b=foobar()
+print(b)
 
 # Prediction: 500, 500, 300
 # Answer: 500, 500, 300, 300 ------does line 35 call a function and reassign the variable?
 
 # #14
-# def foo():
-#     print(1)
-#     bar()
-#     print(2)
-# def bar():
-#     print(3)
-# foo()
+def foo():
+    print(1)
+    bar()
+    print(2)
+def bar():
+    print(3)
+foo()
 
 # Prediction: 1, 3, 2
 # Answer:  1, 3, 2
