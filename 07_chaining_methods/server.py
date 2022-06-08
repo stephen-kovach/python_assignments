@@ -1,5 +1,3 @@
-
-
 class User:		# here's what we have so far
     def __init__(self, name, email):
         self.name = name
