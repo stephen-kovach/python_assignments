@@ -11,7 +11,7 @@ for x in range (5, 1001):
     if x % 5 == 0:
         print(x)
 
-# 3.  Counting, the Doojo Way.  Print integers 1 to 100.  If divisible by five, print "Coding" if divisible by 10, print "Codiing Dojo"
+# 3.  Counting, the Dojo Way.  Print integers 1 to 100.  If divisible by five, print "Coding" if divisible by 10, print "Codiing Dojo"
 
 for x in range (1, 101):
     if x % 10 == 0:
