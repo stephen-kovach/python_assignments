@@ -1,5 +1,6 @@
 # AM I USING THE RIGHT TERMS?  STILL NOT IDENTIFYING INSTANCES
 
+
 class BankAccount:
 
     # class_attribute = [term -value or number or both?]
