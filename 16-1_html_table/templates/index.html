@@ -1,0 +1,48 @@
+<!--16-1_html_tables/index.html -->
+
+<!-- jinga rhymes with ninja -->
+
+<!-- Later: how would I use bootstrap here?  Should I?-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+</head>
+<body>
+
+    <h2>Big Wigs</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- describe jinja after lunch -->
+            <!-- djinja html_ego [ NMCV singular]in egos [ NMCV plural]-->
+            {% for html_ego in egos %}
+                <tr>
+                    <!-- [tabledata][jinja][html_ego -definedLine28][server.py lines 19 -22 DATAFLOW?]-->
+                    <td>{{html_ego['first_name']}}</td>
+                    <td>{{html_ego['last_name']}}</td>
+                    <td>{{html_ego['first_name']}} {{html_ego['last_name']}}</td>
+
+                    <!-- QUESTION:BELOW LINE 2 BREAKS THE WHOLE CODE.  WHY? -->
+                    <!-- SELF ANSWER: THE COMMENTED DJINJA BROKE ALL THE CODE-->
+                    <!-- <td> html_ego['first_name'] typo_html_ego_['last_name']</td> -->
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</body>
+</html> 
