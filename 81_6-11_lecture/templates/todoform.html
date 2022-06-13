@@ -1,0 +1,47 @@
+<!-- # 81-_6-10_lecture/todoform.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>6-10 Lecture</title>
+</head>
+<body>
+<!-- better to use a drop down menu, it controls how users add input -->
+    <form>
+        <div>
+            <label for="todo">
+                New todo:
+            </label>
+                <!-- remind me, why are name and id the same? -->
+            <input type="text" name="todo" id="todo">
+        </div>
+        <div>
+            <label for="status">
+                Status:
+            </label>
+            <select name="status" id="status">
+                <option value="Complete">
+                    Complete
+                </option>
+                <option value="In_Progress">
+                    In Progress
+                </option>
+                <option value="Cancelled">
+                    Cancelled
+                </option>
+            </select>
+        </div>
+        <div>
+            <!-- at this point should I understand other [types] than submit" -->
+            <button type="submit">
+                Create
+            </button>
+        </div>
+
+    </form>
+</body>
+</html>

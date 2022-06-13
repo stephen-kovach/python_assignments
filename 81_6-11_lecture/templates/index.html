@@ -1,0 +1,32 @@
+<!-- # 81-_6-10_lecture_html_table/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>6-10 Lecture</title>
+</head>
+<body>
+
+    <!-- Ask Pablo how to comment this -->
+    <!-- first_name is being [defined?] as "Marcus" 
+            on "/" [home route?] -->
+    <h1>
+        Welcome to the homepage {{ first_name  }}
+    </h1>
+    <div class="main">
+        <ul>
+            {% for element in list_todos: %}
+                {% if element["status"] == "Complete" %}
+                    <li>
+                        {{ element["status"] }} - {{ element["todo"] }}
+                    </li>
+                {% endif %}
+            {% endfor %} 
+        </ul>
+    </div>
+</body>
+</html>
