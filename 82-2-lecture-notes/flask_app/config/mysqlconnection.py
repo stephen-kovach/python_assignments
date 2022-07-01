@@ -9,13 +9,13 @@
 # 
 # 82-2-lecture-notes/flask_app/config/mysqlconnection.py
 
-    # t/f the code above displays how the file is modularized
-    # t/f the way the file is structred is how it is modulariized
-    # t/f the file is structured/modularized/both? correctly -
+    # t/f above -term?url?- displays how the file is modularized
+    # t/f the way the file is structred is how the file is modulariized
+    # t/f this folder is structured/modularized/both? correctly -
 
 import pymysql.cursors
 
-    # a concise definition of pymysql.cursors would be 
+    # a concise summary of what pymysql.cursors means would be 
 
             # --
 
@@ -24,15 +24,16 @@ import pymysql.cursors
 
 # we are defining a class called MySQLConnection 
             # MySQLConnection is red because it is a --
-            # MySQLConnection must be capitalized because it is a class
+            # t/f MySQLConnection must be capitalized because it is a class
 
             # a concise way to summarize "definig a class" would be
 
                 # --
 
 class MySQLConncection:
-# we are defining a function called __init__
-        # t/f __init__ is also called a constructor functions
+
+    # we are defining a function called __init__
+        # t/f __init__ is also called a constructor function
         # we are defining two parameters
             # the parameters are called self and db
 
@@ -40,10 +41,12 @@ class MySQLConncection:
 
                 # -
             
+            # t/f there is no need to define db, because it is arbitrary
+            
             # db refers to  -
                 # is faded at 8:59 because we haven't -- yet
 
-    def __init__(self, db):
+    def __init__( self, db ):
 
         # 2022-06-19-9:08, i don't understand any of this--comeback to it --
 
@@ -51,11 +54,16 @@ class MySQLConncection:
             # change the user and password as needed
             # t/f  the code below is a method
             # the purpose of the code below is to --  
+            # pysql.connect() is called a --
+            # pysql is called a --
+            # .connect is called a --
+            # host and user are examples of --
+            # t/f we are assigning the values of the strings to the -a-
         connection = pysql.connect( host = 'localhost',
                                     user = 'root',
                                     password = 'root',
                                     db= db, # db on the right is not a string because --
-                                    charset = 'utf8mb4', # the string on the right means
+                                    charset = 'utf8mb4', # the string on the right means --
                                                                 # --  
                                     cursorclass = pymysql.cursors.DictCursor, 
                                         # pymysql.cursors.DictCursor 
@@ -68,11 +76,11 @@ class MySQLConncection:
                                             # it means --
                                             
                                 # t/f the code above is an object and a dictionary 
-                                # t/f the code block above is -lined up?- correctly
+                                # t/f the code block above is -term/"lined up"?- correctly
                                 # t/f the syntax in the code block above is correct
                                 # t/f 
 
-    # t/f the code snippet below (way below) is us defining a second function in the --class?--
+    # t/f the code snippet below (way below) is defining a second function in the --class?--
         # a consice summary of what defining a class would be:
 
             # --
@@ -81,6 +89,7 @@ class MySQLConncection:
             
             # --
     
+        # t/f the function called query_bd
         # we are defining 3 parameters:
 
             # self which means --
@@ -89,7 +98,7 @@ class MySQLConncection:
 
     # this is the 2nd function defined in/by the class 
                     # a "class" is a --
-    def query_bd( self, query, data = None ):
+    def query_db( self, query, data = None ):
 
             # the reason the -variable?- called data is assigned the -value?- of None
                     # is because --
@@ -101,16 +110,35 @@ class MySQLConncection:
                     # is because --
 
         # i do not understand the code below
-        # the code below connects to mysql workbench
+
+        # the reason i do not understand the code below is because 
+        
+            # I have not done -- assignement.  After that it will make sense. 
+
+            # t/f discussing this particular block of code is not an effecient 
+                # use of this code review =) 
+
+        # t/f the code below connects to mysql workbench
         with self.connection.cursor() as cursor:
+            # t/f the code above is not a loop
+            # the difference between the code snippet above and a for loop is
+
+                # --
+
+            # the keyword called try is an example of a --
+            # t/f in python, all lines of code that have keywords in them
+                # will end in a ':' colon
             try:
                 query = cursor.mogrify( query, data )
                 print( "Running Query:", query )
-
+                # the above print statement is used for us programmers
+                    # to view our code in the console/terminal
+                                # t/f console and terminal mean the same thing
+                    # and debug if necessary 
                 cursor.execute( query, data )
                 if query.lower().find( "insert" ) >= 0:
-                # a conditional statemnet 
-                    # it says --
+                # the code above is a conditional statement
+                    # it says -- 
 
                     # JJC INSERT queries will return the ID NUMBER of the row inserted
                     # t/f the code below is spaced properly
@@ -148,3 +176,11 @@ def connectToMySQL( db ):
     # t/f the code block above is --intented?-- correctly
 
 
+# t/f we don't need the code commented out below
+
+if __name__== "__main__":
+    app.run( debug = True, port =5001)
+
+# the reason we don't need the code snippet above is because
+
+    # --

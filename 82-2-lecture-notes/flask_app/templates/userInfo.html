@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos App</title>
+</head>
+<body>
+    <h1>{{session['first_name']}} {{session['last_name']}}, your todo's: </h1>
+    {% if current_user != 0 %}
+        <ul>
+            {% for todo in current_user.list_todos: %}
+                <li>
+                    {{todo.status}} - {{todo.todo}} - {{todo.created_at}}
+                    <a href="/todo{{todo.id}}/update">Edit</a>
+                    <a href="/todo{{todo.id}}/delete">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div>
+                <h1>You currently don't have any todos!</h1>
+
+        </div>
+    {% endif %}
+    <a href="/todos">Return to Home</a>
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
